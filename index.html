@@ -134,7 +134,14 @@ section{scroll-margin-top:var(--head-h)}
 
 /* 브로슈어 시트 뷰어 */
 .sheet{position:relative;margin-top:28px;background:#fff;border:1px solid var(--line)}
-.sheet-scroll{overflow:auto;-webkit-overflow-scrolling:touch}
+.sheet-scroll{overflow:hidden;-webkit-overflow-scrolling:touch;transition:max-height .25s ease}
+.sheet[data-open="false"] .sheet-scroll{max-height:300px}
+.sheet[data-open="false"]::after{content:"";position:absolute;left:0;right:0;bottom:48px;height:120px;
+  pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0),#fff 85%)}
+.sheet-btns{display:flex;gap:8px;flex:0 0 auto}
+.more{border:1px solid var(--line);background:#fff;color:var(--ink-60);font-size:13px;font-weight:600;
+  padding:7px 14px;border-radius:2px;cursor:pointer}
+.more:hover{border-color:var(--plum-600);color:var(--plum-600)}
 .sheet-scroll img{width:100%;margin-inline:auto}
 .sheet-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;
   padding:10px 14px;border-top:1px solid var(--line);background:var(--bronze-100)}
@@ -143,7 +150,7 @@ section{scroll-margin-top:var(--head-h)}
   font-size:13px;font-weight:600;padding:7px 14px;border-radius:2px;cursor:pointer}
 .zoom:hover{background:var(--plum-600);color:#fff}
 @media (min-width:768px){
-  .sheet-scroll{max-height:74vh}
+  .sheet[data-open="true"] .sheet-scroll{max-height:74vh;overflow:auto}
   .sheet-scroll img{max-width:min(100%,960px)}
 }
 
@@ -679,6 +686,34 @@ const CONFIG = {
   // 비워두면 문자(SMS) 발송 방식으로 대체 동작합니다.
   formEndpoint: ""
 };
+
+/* ---------- 브로슈어 시트 접기/펼치기 ---------- */
+document.querySelectorAll(".sheet").forEach(sheet=>{
+  const bar = sheet.querySelector(".sheet-bar");
+  const zoomBtn = bar.querySelector(".zoom");
+  const isUnit = !!sheet.closest(".unit-grid");   // 평면도는 항상 펼친 상태로 둔다
+  sheet.dataset.open = isUnit ? "true" : "false";
+
+  const box = document.createElement("div");
+  box.className = "sheet-btns";
+  bar.appendChild(box);
+
+  if(!isUnit){
+    const more = document.createElement("button");
+    more.className = "more";
+    more.textContent = "자세히 보기";
+    more.setAttribute("aria-expanded","false");
+    more.addEventListener("click", ()=>{
+      const open = sheet.dataset.open === "true";
+      sheet.dataset.open = open ? "false" : "true";
+      more.textContent = open ? "자세히 보기" : "접기";
+      more.setAttribute("aria-expanded", String(!open));
+      if(open) sheet.scrollIntoView({block:"nearest", behavior:"smooth"});
+    });
+    box.appendChild(more);
+  }
+  box.appendChild(zoomBtn);
+});
 
 /* ---------- 세대 타입 데이터 ---------- */
 const UNITS = {
