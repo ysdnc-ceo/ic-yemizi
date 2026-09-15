@@ -90,12 +90,13 @@ nav.gnb a:hover{color:#fff;background:rgba(255,255,255,.1)}
 @media (max-width:640px){.factbar ul{grid-template-columns:repeat(2,1fr)}}
 
 /* 섹션 공통 */
+section{scroll-margin-top:var(--head-h)}
 .sec{padding:clamp(50px,6vw,85px) 0}
 .sec--alt{background:var(--white)}
 .sec-head{margin-bottom:28px}
 
-/* 사업개요 */
-.spec{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;border-top:1px solid var(--line);margin-bottom:30px}
+/* 사업개요 사양 표 */
+.spec{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;border-top:1px solid var(--line);margin-bottom:24px}
 .spec div{display:grid;grid-template-columns:120px 1fr;padding:14px 2px;border-bottom:1px solid var(--line)}
 .spec dt{color:var(--plum-600);font-weight:600}
 .spec dd{margin:0}
@@ -105,11 +106,11 @@ nav.gnb a:hover{color:#fff;background:rgba(255,255,255,.1)}
 .img-box{margin-top:20px;border:1px solid var(--line);background:#fff;padding:10px;border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,0.04);text-align:center}
 .img-box img{width:100%;margin:0 auto;border-radius:2px}
 
-/* 그리드 이미지 박스 */
+/* 2열 이미지 그리드 */
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
 @media (max-width:700px){.grid-2{grid-template-columns:1fr}}
 
-/* 평면도 영역 */
+/* 평면도 탭 영역 */
 .tab-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
 .tab-btn{border:1px solid var(--line);background:#fff;color:var(--ink-60);padding:10px 18px;font-weight:600;border-radius:3px;cursor:pointer}
 .tab-btn.active{background:var(--plum-700);color:#fff;border-color:var(--plum-700)}
@@ -153,8 +154,11 @@ footer b{color:#fff}
         <li><a href="#overview">사업개요</a></li>
         <li><a href="#place">입지환경</a></li>
         <li><a href="#premium">프리미엄</a></li>
-        <li><a href="#special">단지특화</a></li>
+        <li><a href="#complex">단지배치도</a></li>
+        <li><a href="#community">커뮤니티</a></li>
+        <li><a href="#special">특화설계</a></li>
         <li><a href="#unit">평면안내</a></li>
+        <li><a href="#brand">인테리어/브랜드</a></li>
         <li><a href="#regist">관심고객등록</a></li>
       </ul>
     </nav>
@@ -215,7 +219,7 @@ footer b{color:#fff}
     </div>
   </section>
 
-  <!-- 3. 입지환경 (special_01) -->
+  <!-- 3. 입지환경 (special_01.jpg) -->
   <section id="place" class="sec">
     <div class="wrap">
       <div class="sec-head">
@@ -224,7 +228,7 @@ footer b{color:#fff}
         <p class="sec-lead">경강선 이천역 생활권, 초품아, 원스톱 행정타운 인프라를 한눈에</p>
       </div>
       <div class="img-box">
-        <img src="special_01.jpg" alt="입지환경 지도" />
+        <img src="special_01.jpg" alt="입지환경 안내" />
       </div>
     </div>
   </section>
@@ -235,7 +239,7 @@ footer b{color:#fff}
       <div class="sec-head">
         <p class="sec-label">PREMIUM</p>
         <h2 class="sec-title">프리미엄 안내</h2>
-        <p class="sec-lead">중리지구의 독보적인 미래가치와 프리미엄</p>
+        <p class="sec-lead">중리지구의 독보적인 미래가치와 주거 프리미엄</p>
       </div>
       <div class="img-box">
         <img src="premium.jpg" alt="프리미엄 안내" />
@@ -243,52 +247,57 @@ footer b{color:#fff}
     </div>
   </section>
 
-  <!-- 5. 단지특화 & 시스템 (place, special_02_01 시리즈) -->
+  <!-- 5. 단지배치도 (place.jpg) -->
+  <section id="complex" class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-label">COMPLEX PLAN</p>
+        <h2 class="sec-title">단지 및 동호수 배치도</h2>
+        <p class="sec-lead">전 세대 남향 위주 배치와 쾌적한 17.54% 건폐율로 넓은 동간거리 확보</p>
+      </div>
+      <div class="img-box">
+        <img src="place.jpg" alt="단지 배치도" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 커뮤니티 (special_02_01.jpg, special_02_02.jpg) -->
+  <section id="community" class="sec sec--alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-label">COMMUNITY</p>
+        <h2 class="sec-title">커뮤니티 센터</h2>
+        <p class="sec-lead">입주민의 건강과 여유로운 라이프스타일을 위한 품격 높은 커뮤니티 공간</p>
+      </div>
+      <div class="grid-2">
+        <div class="img-box"><img src="special_02_01.jpg" alt="커뮤니티 안내 1" /></div>
+        <div class="img-box"><img src="special_02_02.jpg" alt="커뮤니티 안내 2" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 특화설계 (special_02_03.jpg, special_02_04.jpg) -->
   <section id="special" class="sec">
     <div class="wrap">
       <div class="sec-head">
         <p class="sec-label">SPECIAL SYSTEM</p>
-        <h2 class="sec-title">단지 및 특화설계</h2>
-        <p class="sec-lead">스마트 라이프를 실현하는 예미지만의 특화 시스템</p>
+        <h2 class="sec-title">특화설계 및 시스템</h2>
+        <p class="sec-lead">스마트 라이프와 생활의 편리함을 극대화하는 예미지 특화 시스템</p>
       </div>
-
-      <div class="img-box">
-        <img src="place.jpg" alt="단지 특화설계" />
-      </div>
-
       <div class="grid-2">
-        <div class="img-box"><img src="special_02_01.jpg" alt="특화 시스템 1" /></div>
-        <div class="img-box"><img src="special_02_02.jpg" alt="특화 시스템 2" /></div>
-        <div class="img-box"><img src="special_02_03.jpg" alt="특화 시스템 3" /></div>
-        <div class="img-box"><img src="special_02_04.jpg" alt="특화 시스템 4" /></div>
+        <div class="img-box"><img src="special_02_03.jpg" alt="특화설계 1" /></div>
+        <div class="img-box"><img src="special_02_04.jpg" alt="특화설계 2" /></div>
       </div>
     </div>
   </section>
 
-  <!-- 6. 인테리어 및 브랜드 (interior.jpg, brand.jpg) -->
-  <section class="sec sec--alt">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="sec-label">INTERIOR & BRAND</p>
-        <h2 class="sec-title">인테리어 및 브랜드</h2>
-      </div>
-
-      <div class="img-box">
-        <img src="interior.jpg" alt="인테리어 안내" />
-      </div>
-      <div class="img-box" style="margin-top:24px">
-        <img src="brand.jpg" alt="금성백조 예미지 브랜드" />
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. 세대 평면안내 (unit_59a ~ unit_84c 클릭 전환) -->
-  <section id="unit" class="sec">
+  <!-- 8. 세대 평면안내 (unit_59a, unit_59b, unit_84a, unit_84b, unit_84c) -->
+  <section id="unit" class="sec sec--alt">
     <div class="wrap">
       <div class="sec-head">
         <p class="sec-label">UNIT PLAN</p>
         <h2 class="sec-title">세대 평면안내</h2>
-        <p class="sec-lead">버튼을 클릭하시면 해당 타입의 평면도를 확인하실 수 있습니다.</p>
+        <p class="sec-lead">버튼을 클릭하시면 해당 타입의 평면도와 제원을 확인하실 수 있습니다.</p>
       </div>
 
       <div class="tab-btns">
@@ -313,7 +322,25 @@ footer b{color:#fff}
     </div>
   </section>
 
-  <!-- 8. 관심고객등록 폼 -->
+  <!-- 9. 인테리어 및 브랜드 (interior.jpg, brand.jpg) -->
+  <section id="brand" class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-label">INTERIOR & BRAND</p>
+        <h2 class="sec-title">인테리어 및 브랜드</h2>
+        <p class="sec-lead">금성백조 예미지가 선사하는 고품격 주거 미학과 브랜드 가치</p>
+      </div>
+
+      <div class="img-box">
+        <img src="interior.jpg" alt="인테리어 안내" />
+      </div>
+      <div class="img-box" style="margin-top:24px">
+        <img src="brand.jpg" alt="금성백조 예미지 브랜드" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. 관심고객등록 폼 -->
   <section id="regist" class="sec">
     <div class="wrap">
       <div class="sec-head">
@@ -361,7 +388,7 @@ footer b{color:#fff}
   <div class="wrap">
     <b>이천 중리지구 예미지</b>
     <p>현장위치: 경기도 이천시 중리동 518 (중리지구 B3블록) | 분양문의: 1577-8664 | 시공: 금성백조</p>
-    <p style="font-size:11px;opacity:0.6">※ 본 홈페이지의 CG 및 이미지 사진은 소비자의 이해를돕기 위한 것으로 실제와 차이가 있을 수 있습니다.</p>
+    <p style="font-size:11px;opacity:0.6">※ 본 홈페이지의 CG 및 이미지 사진은 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.</p>
   </div>
 </footer>
 
@@ -376,7 +403,7 @@ footer b{color:#fff}
 </div>
 
 <script>
-// 5개 평면도 이미지 및 데이터 연동
+// 5개 평면도 이미지 및 데이터 매칭
 const unitData = {
   '84a': { img: 'unit_84a.jpg', title: '84㎡ A 타입 (413세대)', spec1: '84.9750㎡', spec2: '113.1230㎡', spec3: '4Bay 맞통풍 판상형 구조, 대형 팬트리 및 드레스룸' },
   '84b': { img: 'unit_84b.jpg', title: '84㎡ B 타입 (238세대)', spec1: '84.9810㎡', spec2: '113.2140㎡', spec3: '채광과 조망이 우수한 이면 개방형 특화 평면' },
