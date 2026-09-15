@@ -7,18 +7,15 @@
 <meta name="description" content="이천 중리지구 B3블록, 이천역 예미지 센트럴파크. 지하 2층~지상 20층 12개동 총 1,009세대. 전용 59㎡·84㎡. 2026년 11월 입주 예정. 분양문의 1577-8664" />
 <meta property="og:title" content="이천역 예미지 센트럴파크" />
 <meta property="og:description" content="이천 중리지구 총 1,009세대 대단지 · 전용 59㎡·84㎡ · 2026년 11월 입주 예정" />
-<meta property="og:url" content="https://ysdnc.co.kr/ic-yemizi/" />
-<meta property="og:image" content="https://ysdnc.co.kr/ic-yemizi/images/overview.jpg" />
 <meta property="og:type" content="website" />
+
+<!-- 웹폰트 설정 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
 <style>
-/* =========================================================
-   이천역 예미지 센트럴파크 — 원페이지 분양 홈페이지
-   색상 토큰: 예미지 브로슈어의 자주(plum) + 브론즈(gold) 계열
-   ========================================================= */
 :root{
   --plum-900:#2A0F42;
   --plum-700:#43206B;
@@ -33,11 +30,10 @@
   --ink-30:#9A94A0;
   --line:#E3DED7;
 
-  /* 타입별 색상 (브로슈어 동호 배치 색 체계 그대로) */
+  /* 타입별 색상 */
   --t59a:#D6407E;
   --t59b:#CE6B85;
   --t84a:#3F6BB0;
-  --t84a1:#6E96D1;
   --t84b:#45A39E;
   --t84c:#7B5BA6;
 
@@ -56,218 +52,149 @@ img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit}
 :focus-visible{outline:3px solid var(--bronze);outline-offset:2px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 
 .wrap{width:min(100% - 40px,var(--wrap));margin-inline:auto}
 @media (max-width:640px){.wrap{width:calc(100% - 32px)}}
 
-/* ---------- 타이포 ---------- */
+/* 타이포 */
 .display{font-family:"Gowun Batang","Nanum Myeongjo",serif;font-weight:700;line-height:1.28;letter-spacing:-.02em}
-h2.sec-title{font-family:"Gowun Batang",serif;font-weight:700;font-size:clamp(26px,3.4vw,40px);line-height:1.3;margin:0 0 14px}
+h2.sec-title{font-family:"Gowun Batang",serif;font-weight:700;font-size:clamp(24px,3.2vw,38px);line-height:1.3;margin:0 0 14px}
 .sec-label{display:flex;align-items:center;gap:10px;color:var(--bronze);font-size:13px;font-weight:600;margin:0 0 12px}
-.sec-label::before{content:"";width:26px;height:1px;background:var(--bronze)}
-.sec-lead{max-width:62ch;color:var(--ink-60);font-size:clamp(15px,1.5vw,17px);margin:0}
-.note{font-size:12.5px;color:var(--ink-30);line-height:1.6}
+.sec-label::before{content:"";width:24px;height:2px;background:var(--bronze)}
+.sec-lead{max-width:65ch;color:var(--ink-60);font-size:clamp(15px,1.4vw,17px);margin:0}
 
-/* ---------- 헤더 ---------- */
+/* 헤더 */
 header{
   position:fixed;inset:0 0 auto;height:var(--head-h);z-index:60;
-  background:rgba(42,15,66,.92);backdrop-filter:blur(8px);
+  background:rgba(42,15,66,.95);backdrop-filter:blur(8px);
   border-bottom:1px solid rgba(255,255,255,.12);
 }
 .head-in{height:100%;display:flex;align-items:center;gap:18px}
 .brand{display:flex;align-items:baseline;gap:8px;color:#fff;flex:0 0 auto}
-.brand b{font-family:"Gowun Batang",serif;font-size:19px;letter-spacing:0}
+.brand b{font-family:"Gowun Batang",serif;font-size:19px}
 .brand span{font-size:11px;color:#C7B4E0}
 nav.gnb{flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
 nav.gnb::-webkit-scrollbar{display:none}
-nav.gnb ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;white-space:nowrap}
-nav.gnb a{display:block;padding:8px 12px;color:#D9CCE9;font-size:14.5px;border-radius:999px}
-nav.gnb a:hover{color:#fff}
-nav.gnb a[aria-current="true"]{color:var(--plum-900);background:#fff;font-weight:600}
-.head-tel{flex:0 0 auto;display:none;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:17px;
-  border:1px solid rgba(255,255,255,.35);padding:7px 15px;border-radius:999px}
+nav.gnb ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;white-space:nowrap}
+nav.gnb a{display:block;padding:8px 12px;color:#D9CCE9;font-size:14.5px;border-radius:4px;transition:0.2s}
+nav.gnb a:hover{color:#fff;background:rgba(255,255,255,0.1)}
+.head-tel{flex:0 0 auto;display:none;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:16px;
+  border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:999px}
 .head-tel small{font-size:11px;font-weight:400;color:#C7B4E0}
 @media (min-width:1000px){.head-tel{display:flex}}
 
-/* ---------- 히어로 ---------- */
+/* 히어로 */
 .hero{position:relative;padding-top:var(--head-h);background:var(--plum-900);color:#fff;overflow:hidden}
-.hero-img{position:relative;height:clamp(340px,56vh,560px)}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.hero-img{position:relative;height:clamp(360px,58vh,560px)}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-img::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(42,15,66,.55) 0%,rgba(42,15,66,.1) 38%,rgba(42,15,66,.92) 100%)}
-.hero-copy{position:absolute;inset:auto 0 0;padding-bottom:26px;z-index:2}
+  background:linear-gradient(180deg,rgba(42,15,66,.6) 0%,rgba(42,15,66,.2) 40%,rgba(42,15,66,.95) 100%)}
+.hero-copy{position:absolute;inset:auto 0 0;padding-bottom:28px;z-index:2}
 .hero-place{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:#DCC9A8;margin-bottom:10px}
-.hero-place em{font-style:normal;padding:3px 9px;border:1px solid rgba(220,201,168,.5);border-radius:3px}
-.hero h1{margin:0;font-size:clamp(30px,5.6vw,60px);text-shadow:0 2px 18px rgba(0,0,0,.4)}
-.hero h1 .sub{display:block;font-size:clamp(14px,1.8vw,19px);font-family:"Pretendard",sans-serif;font-weight:500;color:#E5D9F2;letter-spacing:.02em;margin-bottom:8px}
+.hero-place em{font-style:normal;padding:3px 8px;border:1px solid rgba(220,201,168,.5);border-radius:3px}
+.hero h1{margin:0;font-size:clamp(28px,5vw,54px);text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.hero h1 .sub{display:block;font-size:clamp(14px,1.7vw,18px);font-family:"Pretendard",sans-serif;font-weight:500;color:#E5D9F2;margin-bottom:8px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:14px 24px;border-radius:2px;font-weight:700;font-size:15.5px;border:1px solid transparent;cursor:pointer;transition:.18s}
+  padding:12px 22px;border-radius:3px;font-weight:700;font-size:15px;border:1px solid transparent;cursor:pointer;transition:.18s;text-decoration:none}
 .btn-gold{background:var(--bronze);color:#fff}
 .btn-gold:hover{background:#8A7A50}
 .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
 .btn-ghost:hover{background:rgba(255,255,255,.12)}
-.btn-plum{background:var(--plum-600);color:#fff}
-.btn-plum:hover{background:var(--plum-700)}
 
 /* 핵심 요약 바 */
 .factbar{background:var(--plum-700);border-top:1px solid rgba(255,255,255,.14)}
 .factbar ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
 .factbar li{padding:16px 10px;text-align:center;border-left:1px solid rgba(255,255,255,.12)}
 .factbar li:first-child{border-left:0}
-.factbar dt{font-size:11.5px;color:#BFA9DC;margin-bottom:4px}
-.factbar dd{margin:0;font-size:clamp(15px,2vw,20px);font-weight:700;color:#fff;font-family:"Gowun Batang",serif}
-@media (max-width:640px){.factbar ul{grid-template-columns:repeat(2,1fr)}
+.factbar dt{font-size:12px;color:#BFA9DC;margin-bottom:4px}
+.factbar dd{margin:0;font-size:clamp(16px,2vw,22px);font-weight:700;color:#fff;font-family:"Gowun Batang",serif}
+@media (max-width:640px){
+  .factbar ul{grid-template-columns:repeat(2,1fr)}
   .factbar li:nth-child(3),.factbar li:nth-child(4){border-top:1px solid rgba(255,255,255,.12)}
-  .factbar li:nth-child(3){border-left:0}}
-
-/* ---------- 섹션 공통 ---------- */
-section{scroll-margin-top:var(--head-h)}
-.sec{padding:clamp(56px,7vw,96px) 0}
-.sec--alt{background:var(--white)}
-.sec--dark{background:var(--plum-900);color:#fff}
-.sec--dark .sec-lead{color:#CBBEDB}
-.sec--dark .sec-label{color:#D9C08C}
-.sec--dark .sec-label::before{background:#D9C08C}
-.sec-head{margin-bottom:clamp(28px,4vw,44px)}
-
-/* 브로슈어 시트 뷰어 */
-.sheet{position:relative;margin-top:28px;background:#fff;border:1px solid var(--line)}
-.sheet-scroll{overflow:hidden;-webkit-overflow-scrolling:touch;transition:max-height .25s ease}
-.sheet[data-open="false"] .sheet-scroll{max-height:300px}
-.sheet[data-open="false"]::after{content:"";position:absolute;left:0;right:0;bottom:48px;height:120px;
-  pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0),#fff 85%)}
-.sheet-btns{display:flex;gap:8px;flex:0 0 auto}
-.more{border:1px solid var(--line);background:#fff;color:var(--ink-60);font-size:13px;font-weight:600;
-  padding:7px 14px;border-radius:2px;cursor:pointer}
-.more:hover{border-color:var(--plum-600);color:var(--plum-600)}
-.sheet-scroll img{width:100%;margin-inline:auto}
-.sheet-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:10px 14px;border-top:1px solid var(--line);background:var(--bronze-100)}
-.sheet-bar span{font-size:12.5px;color:var(--ink-60)}
-.zoom{border:1px solid var(--plum-600);background:#fff;color:var(--plum-600);
-  font-size:13px;font-weight:600;padding:7px 14px;border-radius:2px;cursor:pointer}
-.zoom:hover{background:var(--plum-600);color:#fff}
-@media (min-width:768px){
-  .sheet[data-open="true"] .sheet-scroll{max-height:74vh;overflow:auto}
-  .sheet-scroll img{max-width:min(100%,960px)}
+  .factbar li:nth-child(3){border-left:0}
 }
 
-/* ---------- 사업개요 ---------- */
+/* 섹션 공통 */
+section{scroll-margin-top:var(--head-h)}
+.sec{padding:clamp(50px,6vw,90px) 0}
+.sec--alt{background:var(--white)}
+.sec-head{margin-bottom:clamp(24px,3.5vw,40px)}
+
+/* 사업개요 표 */
 .spec{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;border-top:1px solid var(--line)}
-.spec div{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:15px 2px;border-bottom:1px solid var(--line)}
+.spec div{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:15px 4px;border-bottom:1px solid var(--line)}
 .spec dt{color:var(--plum-600);font-size:14px;font-weight:600;margin:0}
-.spec dd{margin:0;font-size:15.5px;font-weight:500}
+.spec dd{margin:0;font-size:15px;font-weight:500}
 @media (max-width:760px){.spec{grid-template-columns:1fr}}
 
-/* ---------- 프리미엄 카드 ---------- */
+/* 프리미엄 카드 */
 .prem{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.prem article{background:#fff;padding:26px 22px 28px}
+.prem article{background:#fff;padding:26px 20px}
 .prem h3{margin:0 0 8px;font-size:18px;font-family:"Gowun Batang",serif;line-height:1.35}
 .prem p{margin:0;font-size:14px;color:var(--ink-60);line-height:1.65}
-.prem .idx{font-size:12px;color:var(--bronze);font-weight:700;letter-spacing:.06em;display:block;margin-bottom:12px}
+.prem .idx{font-size:12px;color:var(--bronze);font-weight:700;display:block;margin-bottom:10px}
 @media (max-width:980px){.prem{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.prem{grid-template-columns:1fr}}
 
-/* ---------- 입지 ---------- */
-.loc{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
-.loc article{background:#fff;border-left:3px solid var(--plum-600);padding:22px 24px}
-.sec--dark .loc article{background:rgba(255,255,255,.06);border-left-color:#D9C08C}
-.loc h3{margin:0 0 7px;font-size:17.5px}
-.loc p{margin:0;font-size:14.5px;color:var(--ink-60);line-height:1.66}
-.sec--dark .loc p{color:#C6B9D6}
-@media (max-width:760px){.loc{grid-template-columns:1fr;gap:14px}}
-
-/* ---------- 세대 안내 ---------- */
-.mixbar{display:flex;height:34px;border-radius:2px;overflow:hidden;margin:6px 0 10px}
-.mixbar i{display:block}
-.mixlegend{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;margin:0 0 30px;font-size:13px;color:var(--ink-60)}
-.mixlegend li{display:flex;align-items:center;gap:7px}
-.mixlegend b{width:11px;height:11px;border-radius:2px;display:inline-block}
+/* 세대 타입 안내 */
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.tab{border:1px solid var(--line);background:#fff;color:var(--ink-60);padding:11px 18px;border-radius:2px;
-  font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:9px}
+.tab{border:1px solid var(--line);background:#fff;color:var(--ink-60);padding:10px 18px;border-radius:3px;
+  font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px}
 .tab i{width:9px;height:9px;border-radius:50%;background:var(--c)}
-.tab[aria-selected="true"]{background:var(--c);border-color:var(--c);color:#fff}
-.unit-grid{display:grid;grid-template-columns:320px 1fr;gap:30px;align-items:start}
-@media (max-width:900px){.unit-grid{grid-template-columns:1fr}}
-.unit-meta{background:#fff;border:1px solid var(--line);padding:24px}
-.unit-meta .tname{font-family:"Gowun Batang",serif;font-size:34px;font-weight:700;line-height:1;color:var(--c)}
-.unit-meta .tsub{font-size:13px;color:var(--ink-30);margin:6px 0 18px}
+.tab.active{background:var(--plum-700);border-color:var(--plum-700);color:#fff}
+.unit-meta{background:#fff;border:1px solid var(--line);padding:24px;border-radius:4px}
+.unit-meta .tname{font-family:"Gowun Batang",serif;font-size:32px;font-weight:700;line-height:1;color:var(--plum-700);margin-bottom:14px}
 .unit-meta table{width:100%;border-collapse:collapse;font-size:14.5px}
-.unit-meta th{text-align:left;font-weight:500;color:var(--ink-60);padding:9px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+.unit-meta th{text-align:left;font-weight:500;color:var(--ink-60);padding:9px 0;border-bottom:1px solid var(--line)}
 .unit-meta td{text-align:right;padding:9px 0;border-bottom:1px solid var(--line);font-weight:600}
-.unit-meta tr:last-child th,.unit-meta tr:last-child td{border-bottom:0}
-.unit-meta .hh{background:var(--c);color:#fff;display:inline-block;padding:4px 10px;font-size:13px;font-weight:700;border-radius:2px}
 
-/* ---------- 분양 일정 ---------- */
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.steps li{background:#fff;padding:22px 20px}
-.steps li[data-done="y"]{background:#FBFAF8}
-.steps .d{font-family:"Gowun Batang",serif;font-size:21px;font-weight:700;color:var(--plum-700)}
-.steps .t{font-size:14px;color:var(--ink-60);margin-top:4px}
-.steps .flag{font-size:11.5px;color:var(--bronze);font-weight:700}
-@media (max-width:860px){.steps{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:460px){.steps{grid-template-columns:1fr}}
-.pricebox{margin-top:26px;background:var(--plum-100);border:1px dashed var(--plum-600);padding:22px 24px}
-.pricebox h3{margin:0 0 8px;font-size:17px}
+/* 분양안내 박스 */
+.pricebox{background:var(--plum-100);border:1px dashed var(--plum-600);padding:22px 24px;border-radius:4px}
+.pricebox h3{margin:0 0 6px;font-size:17px;color:var(--plum-900)}
 .pricebox p{margin:0;font-size:14.5px;color:var(--ink-60)}
 
-/* ---------- 관심고객등록 ---------- */
+/* 관심고객등록 폼 */
 #regist{background:linear-gradient(180deg,var(--plum-700),var(--plum-900));color:#fff}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .f-full{grid-column:1/-1}
-label.lb{display:block;font-size:13.5px;color:#DCC9A8;margin-bottom:7px;font-weight:600}
-.inp{width:100%;padding:14px 15px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.07);
-  color:#fff;font-size:15.5px;border-radius:2px;font-family:inherit}
+label.lb{display:block;font-size:13.5px;color:#DCC9A8;margin-bottom:6px;font-weight:600}
+.inp{width:100%;padding:13px 14px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);
+  color:#fff;font-size:15px;border-radius:3px;font-family:inherit}
 .inp::placeholder{color:rgba(255,255,255,.45)}
 select.inp option{color:#241C2B}
-textarea.inp{min-height:96px;resize:vertical}
-.agree{display:flex;gap:11px;align-items:flex-start;background:rgba(0,0,0,.2);padding:16px 18px;border:1px solid rgba(255,255,255,.18)}
-.agree input{margin-top:5px;width:18px;height:18px;accent-color:var(--bronze);flex:0 0 auto}
-.agree p{margin:0;font-size:13px;color:#CBBEDB;line-height:1.6}
-.agree b{color:#fff;font-size:14px;display:block;margin-bottom:3px}
+textarea.inp{min-height:90px;resize:vertical}
+.agree{display:flex;gap:10px;align-items:flex-start;background:rgba(0,0,0,.2);padding:14px 16px;border:1px solid rgba(255,255,255,.18)}
+.agree input{margin-top:4px;width:18px;height:18px;accent-color:var(--bronze);flex:0 0 auto}
+.agree p{margin:0;font-size:13px;color:#CBBEDB;line-height:1.5}
 .form-msg{min-height:22px;font-size:14px;font-weight:600;margin-top:12px}
 .form-msg.err{color:#FFB3C7}
 .form-msg.ok{color:#9FE6C4}
 @media (max-width:700px){.form-grid{grid-template-columns:1fr}}
 
-/* ---------- 푸터 ---------- */
-footer{background:#1B0C2B;color:#9D92AA;padding:44px 0 120px;font-size:13.5px}
-footer .fbrand{font-family:"Gowun Batang",serif;color:#fff;font-size:18px;margin-bottom:14px}
-footer dl{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0 0 18px}
+/* 푸터 */
+footer{background:#1B0C2B;color:#9D92AA;padding:40px 0 110px;font-size:13px}
+footer .fbrand{font-family:"Gowun Batang",serif;color:#fff;font-size:18px;margin-bottom:12px}
+footer dl{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0 0 14px}
 footer dt{color:#7E7290}
 footer dd{margin:0;color:#BCB2C7}
-.disc{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;line-height:1.75;font-size:12.5px;color:#8B7F9B}
+.disc{border-top:1px solid rgba(255,255,255,.1);padding-top:14px;line-height:1.6;font-size:12px;color:#8B7F9B}
 
-/* ---------- 플로팅 버튼 ---------- */
+/* 하단 고정 바 & 플로팅 버튼 */
 .float{position:fixed;right:18px;bottom:24px;z-index:70;display:flex;flex-direction:column;gap:10px}
-.float a,.float button{display:flex;align-items:center;gap:10px;padding:14px 20px;border-radius:999px;
-  font-weight:700;font-size:15px;border:0;cursor:pointer;box-shadow:0 8px 26px rgba(42,15,66,.34)}
-.float .f-tel{background:#fff;color:var(--plum-900);border:1px solid var(--line)}
+.float a{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;
+  font-weight:700;font-size:14px;border:0;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.float .f-tel{background:#fff;color:var(--plum-900)}
 .float .f-reg{background:var(--bronze);color:#fff}
-.float .f-top{align-self:flex-end;background:rgba(42,15,66,.85);color:#fff;padding:12px 15px;font-size:13px}
-.float svg{width:19px;height:19px;flex:0 0 auto}
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
-  grid-template-columns:1fr 1fr;box-shadow:0 -6px 20px rgba(0,0,0,.18);padding-bottom:env(safe-area-inset-bottom)}
-.mbar a,.mbar button{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 8px;
-  font-size:16px;font-weight:700;border:0;cursor:pointer}
+  grid-template-columns:1fr 1fr;box-shadow:0 -4px 16px rgba(0,0,0,.15);padding-bottom:env(safe-area-inset-bottom)}
+.mbar a{display:flex;align-items:center;justify-content:center;gap:6px;padding:15px 8px;font-size:15px;font-weight:700}
 .mbar .m-tel{background:#fff;color:var(--plum-900)}
 .mbar .m-reg{background:var(--bronze);color:#fff}
 @media (max-width:760px){
   .float{display:none}
   .mbar{display:grid}
-  footer{padding-bottom:96px}
 }
-
-/* ---------- 라이트박스 ---------- */
-.lb{position:fixed;inset:0;z-index:100;background:rgba(20,8,32,.94);display:none;
-  overflow:auto;padding:58px 12px 30px}
-.lb.on{display:block}
-.lb img{margin:0 auto;width:auto;max-width:100%}
-.lb-close{position:fixed;top:12px;right:14px;background:#fff;color:var(--plum-900);border:0;
-  width:42px;height:42px;border-radius:50%;font-size:20px;cursor:pointer;font-weight:700}
 </style>
 </head>
 <body>
@@ -279,13 +206,8 @@ footer dd{margin:0;color:#BCB2C7}
       <ul>
         <li><a href="#overview">사업개요</a></li>
         <li><a href="#premium">프리미엄</a></li>
-        <li><a href="#location">입지</a></li>
-        <li><a href="#complex">단지</a></li>
         <li><a href="#unit">세대안내</a></li>
-        <li><a href="#community">커뮤니티</a></li>
-        <li><a href="#system">특화</a></li>
-        <li><a href="#brand">브랜드</a></li>
-        <li><a href="#sale">분양안내</a></li>
+        <li><a href="#sale">분양일정</a></li>
         <li><a href="#regist">관심고객등록</a></li>
       </ul>
     </nav>
@@ -295,15 +217,15 @@ footer dd{margin:0;color:#BCB2C7}
 
 <main id="top">
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-img">
-      <img src="images/overview.jpg" alt="이천역 예미지 센트럴파크 조감도" width="1092" height="1120" decoding="async" />
+      <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80" alt="이천역 예미지 센트럴파크 조감도 예시" />
       <div class="wrap hero-copy">
         <p class="hero-place"><em>이천 중리지구 B3블록</em> 경기도 이천시 중리동 518</p>
         <h1 class="display"><span class="sub">경강선 이천역 생활권, 12개동 대단지</span>이천역 예미지<br />센트럴파크</h1>
         <div class="hero-cta">
-          <button class="btn btn-gold" data-goto="#regist">관심고객 등록하기</button>
+          <a class="btn btn-gold" href="#regist">관심고객 등록하기</a>
           <a class="btn btn-ghost" href="tel:1577-8664">1577-8664 전화상담</a>
         </div>
       </div>
@@ -320,13 +242,13 @@ footer dd{margin:0;color:#BCB2C7}
     </div>
   </section>
 
-  <!-- ===== 사업개요 ===== -->
+  <!-- 사업개요 -->
   <section id="overview" class="sec sec--alt">
     <div class="wrap">
       <div class="sec-head">
         <p class="sec-label">사업개요</p>
         <h2 class="sec-title">이천의 새로운 주거중심, 중리지구에 들어서는 1,009세대</h2>
-        <p class="sec-lead">대지면적 57,059.91㎡에 지하 2층~지상 20층, 12개 동으로 조성되는 대단지입니다. 건폐율 17.54%의 여유로운 배치로 동간거리를 넉넉히 확보했습니다.</p>
+        <p class="sec-lead">대지면적 57,059.91㎡에 지하 2층~지상 20층, 12개 동으로 조성되는 대단지입니다. 건폐율 17.54%의 여유로운 배치로 쾌적한 동간거리를 자랑합니다.</p>
       </div>
 
       <div class="spec">
@@ -336,535 +258,168 @@ footer dd{margin:0;color:#BCB2C7}
         <div><dt>건축규모</dt><dd>지하 2층 ~ 지상 20층</dd></div>
         <div><dt>대지면적</dt><dd>57,059.91㎡</dd></div>
         <div><dt>세대수</dt><dd>총 1,009세대</dd></div>
-        <div><dt>건축면적</dt><dd>10,008.0608㎡</dd></div>
+        <div><dt>건축면적</dt><dd>10,008.06㎡</dd></div>
         <div><dt>공급타입</dt><dd>59㎡ A·B / 84㎡ A·B·C</dd></div>
-      </div>
-
-      <div class="sheet">
-        <div class="sheet-scroll"><img src="images/overview.jpg" alt="이천역 예미지 센트럴파크 조감도 및 사업개요" loading="lazy" width="1092" height="1120" decoding="async" /></div>
-        <div class="sheet-bar"><span>조감도 및 사업개요</span><button class="zoom">크게 보기</button></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 프리미엄 ===== -->
+  <!-- 프리미엄 -->
   <section id="premium" class="sec">
     <div class="wrap">
       <div class="sec-head">
         <p class="sec-label">프리미엄</p>
-        <h2 class="sec-title">이 단지를 선택하는 여덟 가지 이유</h2>
-        <p class="sec-lead">중리지구 마지막 민간분양 단지로, 학교·교통·공원·생활편의가 한 생활권 안에 모입니다.</p>
+        <h2 class="sec-title">이 단지를 선택하는 8가지 핵심 가치</h2>
+        <p class="sec-lead">중리지구 마지막 민간분양 단지로, 학교·교통·공원·생활편의시설이 집중된 중심 입지입니다.</p>
       </div>
 
       <div class="prem">
-        <article><span class="idx">중리지구</span><h3>마지막 민간분양</h3><p>이천의 새로운 주거·행정 중심으로 조성되는 중리지구의 마지막 민간분양 단지입니다.</p></article>
-        <article><span class="idx">교육</span><h3>유치원·초등학교 도보통학</h3><p>단지 바로 앞 중리초(2026년 3월 개교 예정)와 병설유치원(예정) 도보통학권.</p></article>
-        <article><span class="idx">교통</span><h3>경강선 이천역 생활권</h3><p>약 1km 거리의 경강선 이천역과 이천IC·서이천IC를 함께 이용하는 광역교통망.</p></article>
-        <article><span class="idx">생활</span><h3>가까운 생활 인프라</h3><p>이천시청, 경찰서, 세무서, 이천의료원, 대형마트 등 생활편의시설이 인접합니다.</p></article>
-        <article><span class="idx">환경</span><h3>단지 앞 대규모 근린공원</h3><p>지구 내 근린공원과 설봉국제조각공원 등 풍부한 녹지환경을 누립니다.</p></article>
-        <article><span class="idx">공급방식</span><h3>선시공 후분양</h3><p>지어진 집을 직접 확인하고 선택하는 후분양 방식, 2026년 11월 빠른 입주 예정.</p></article>
-        <article><span class="idx">브랜드</span><h3>믿고 사는 예미지</h3><p>김포·동탄·인천 검단 등 수도권에서 검증된 금성백조의 주거 브랜드입니다.</p></article>
-        <article><span class="idx">설계</span><h3>1,009세대 대단지 설계</h3><p>남향 위주 배치, 4Bay 맞통풍 판상형 구조와 수납 강화 특화 평면을 적용했습니다.</p></article>
-      </div>
-
-      <div class="sheet">
-        <div class="sheet-scroll"><img src="images/premium.jpg" alt="금성백조 예미지만의 프리미엄 8가지" loading="lazy" width="840" height="1456" decoding="async" /></div>
-        <div class="sheet-bar"><span>프리미엄 안내 이미지</span><button class="zoom">크게 보기</button></div>
+        <article><span class="idx">중리지구</span><h3>마지막 민간분양</h3><p>이천의 새로운 행정·주거 중심 중리지구에서 누리는 마지막 민간분양 기회.</p></article>
+        <article><span class="idx">교육환경</span><h3>초품아 도보통학</h3><p>단지 바로 앞 중리초(2026년 3월 개교 예정)와 병설유치원 안심 통학권.</p></article>
+        <article><span class="idx">교통환경</span><h3>이천역 생활권</h3><p>경강선 이천역과 이천IC, 서이천IC로 판교 및 수도권 전역 접근성 우수.</p></article>
+        <article><span class="idx">생활인프라</span><h3>원스톱 행정타운</h3><p>이천시청, 세무서, 경찰서, 이천의료원, 대형마트가 인접한 원스톱 인프라.</p></article>
+        <article><span class="idx">자연환경</span><h3>단지 앞 근린공원</h3><p>지구 내 대규모 근린공원 및 설봉산, 조각공원 등 쾌적한 힐링 그린라이프.</p></article>
+        <article><span class="idx">공급방식</span><h3>선시공 후분양</h3><p>실제 지어진 아파트를 눈으로 직접 확인하고 2026년 11월 빠른 입주 가능.</p></article>
+        <article><span class="idx">브랜드파워</span><h3>예미지 프리미엄</h3><p>동탄, 김포, 인천검단 등 전국에서 검증된 금성백조의 명품 주거 브랜드.</p></article>
+        <article><span class="idx">단지특화</span><h3>4Bay 맞통풍 설계</h3><p>남향 위주 배치, 넉넉한 동간거리와 공간 활용성을 극대화한 특화 평면 설계.</p></article>
       </div>
     </div>
   </section>
 
-  <!-- ===== 입지 ===== -->
-  <section id="location" class="sec sec--dark">
+  <!-- 세대안내 -->
+  <section id="unit" class="sec sec--alt">
     <div class="wrap">
       <div class="sec-head">
-        <p class="sec-label">입지환경</p>
-        <h2 class="sec-title">이천의 새로운 중심에서 누리는 생활</h2>
-        <p class="sec-lead">행정타운과 학교, 공원, 역이 걸어서 이어지는 자리. 도시가 완성되는 과정을 그대로 누리는 위치입니다.</p>
+        <p class="sec-label">세대안내</p>
+        <h2 class="sec-title">선호도 높은 전용 59㎡ · 84㎡ 특화 평면</h2>
+        <p class="sec-lead">공간 활용을 극대화한 실속 평면 설계로 쾌적한 주거환경을 제공합니다.</p>
       </div>
 
-      <div class="loc">
-        <article><h3>경강선 이천역 생활권</h3><p>약 1km 거리의 경강선 이천역 이용. GTX-D 노선 연장은 계획 단계로, 확정된 사항은 관계기관 발표를 확인해 주세요.</p></article>
-        <article><h3>도보통학 교육환경</h3><p>단지 바로 앞 중리초·병설유치원(2026년 3월 개교 예정) 도보통학권, 차량 10분 내 이천중·이천제일고와 학원가.</p></article>
-        <article><h3>직주근접 광역교통</h3><p>하이닉스반도체 차량 약 15분, 반경 1km 내 이천터미널과 광역버스정류장, 이천IC·서이천IC 인접.</p></article>
-        <article><h3>일상만족 생활편의</h3><p>지구 내 상업시설 도보 10분, 이천시청·경찰서·세무서·CGV·이천의료원·대형마트 등 인접.</p></article>
-        <article><h3>자연친화 힐링환경</h3><p>단지 앞 지구 내 대규모 근린공원과 설봉국제조각공원, 설봉저수지, 중리천수변공원, 안흥유원지.</p></article>
-        <article><h3>행정·생활 중심축</h3><p>중리택지개발지구 내 행정복지센터, 시립어린이도서관, 이천남초 등 공공시설이 함께 조성됩니다.</p></article>
+      <div class="tabs">
+        <button class="tab active" style="--c:var(--t59a)"><i></i>59㎡ A (140세대)</button>
+        <button class="tab" style="--c:var(--t59b)"><i></i>59㎡ B (96세대)</button>
+        <button class="tab" style="--c:var(--t84a)"><i></i>84㎡ A (413세대)</button>
+        <button class="tab" style="--c:var(--t84b)"><i></i>84㎡ B (238세대)</button>
+        <button class="tab" style="--c:var(--t84c)"><i></i>84㎡ C (122세대)</button>
       </div>
 
-      <div class="sheet">
-        <div class="sheet-scroll"><img src="images/special_01.jpg" alt="이천역 예미지 센트럴파크 입지환경 및 지도" loading="lazy" width="448" height="1568" decoding="async" /></div>
-        <div class="sheet-bar"><span>입지도 · 위치환경</span><button class="zoom">크게 보기</button></div>
+      <div class="unit-meta">
+        <div class="tname">84㎡ A 타입</div>
+        <table>
+          <tr><th>전용면적</th><td>84.9750㎡</td></tr>
+          <tr><th>공급면적</th><td>113.1230㎡</td></tr>
+          <tr><th>주요특징</th><td>4Bay 맞통풍 판상형, 대형 드레스룸 및 팬트리 수납 극대화</td></tr>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- ===== 단지계획 / 배치도 ===== -->
-  <section id="complex" class="sec sec--alt">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="sec-label">단지계획</p>
-        <h2 class="sec-title">넓은 동간거리와 순환형 산책로가 있는 단지</h2>
-        <p class="sec-lead">지상에 차 없는 안전보행 환경(드롭오프존·맘스스테이션)과 중앙광장, 테마 놀이터와 정원을 배치했습니다. 2개 층이 하나로 연결된 원스톱 커뮤니티가 단지 중심에 놓입니다.</p>
-      </div>
-
-      <div class="loc">
-        <article><h3>자연친화 힐링단지</h3><p>개방감을 높인 주동배치, 입주민 전용 순환형 산책로, 대규모 중앙광장과 석가산.</p></article>
-        <article><h3>일상배려 안심단지</h3><p>지상에 차 없는 보행환경과 드롭오프존, 맘스스테이션, 2개 층 연결 대규모 커뮤니티.</p></article>
-        <article><h3>주거만족 특화설계</h3><p>일조·채광을 고려한 넓은 동간거리와 통경축, 전 세대 4Bay 맞통풍 판상형 구조.</p></article>
-        <article><h3>친환경 에너지세이빙</h3><p>녹색건축 예비인증, 장수명주택 인증(일반등급), 태양광에너지와 지하주차장 LED디밍.</p></article>
-      </div>
-
-      <div class="sheet">
-        <div class="sheet-scroll"><img src="images/special_02_01.jpg" alt="단지 조감도 및 조경계획" loading="lazy" width="560" height="1568" decoding="async" /></div>
-        <div class="sheet-bar"><span>단지계획 · 조경계획</span><button class="zoom">크게 보기</button></div>
-      </div>
-
-      <div class="sheet">
-        <div class="sheet-scroll"><img src="images/place.jpg" alt="단지배치도 및 동호수 구성" loading="lazy" width="952" height="1288" decoding="async" /></div>
-        <div class="sheet-bar"><span>단지배치도 · 101~112동 동호수 구성</span><button class="zoom">크게 보기</button></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 세대 안내 ===== -->
-  <section id="unit" class="sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="sec-label">세대 안내</p>
-        <h2 class="sec-title">전용 59㎡ 2개 타입, 84㎡ 4개 타입</h2>
-        <p class="sec-lead">전 세대 확장형 기본 설계에 드레스룸·펜트리·다용도실 등 수납 특화를 더했습니다. 타입을 눌러 세부 면적과 평면을 확인하세요.</p>
-      </div>
-
-      <div class="mixbar" role="img" aria-label="타입별 세대수 비율: 84A 423세대, 59A 297세대, 84B 106세대, 59B 70세대, 84C 60세대, 84A1 53세대">
-        <i style="width:41.9%;background:var(--t84a)"></i>
-        <i style="width:29.4%;background:var(--t59a)"></i>
-        <i style="width:10.5%;background:var(--t84b)"></i>
-        <i style="width:6.9%;background:var(--t59b)"></i>
-        <i style="width:6.0%;background:var(--t84c)"></i>
-        <i style="width:5.3%;background:var(--t84a1)"></i>
-      </div>
-      <ul class="mixlegend">
-        <li><b style="background:var(--t84a)"></b>84A 423세대</li>
-        <li><b style="background:var(--t59a)"></b>59A 297세대</li>
-        <li><b style="background:var(--t84b)"></b>84B 106세대</li>
-        <li><b style="background:var(--t59b)"></b>59B 70세대</li>
-        <li><b style="background:var(--t84c)"></b>84C 60세대</li>
-        <li><b style="background:var(--t84a1)"></b>84A1 53세대</li>
-      </ul>
-
-      <div class="tabs" role="tablist" aria-label="세대 타입 선택">
-        <button class="tab" role="tab" aria-selected="true" data-unit="59a" style="--c:var(--t59a)"><i></i>59A</button>
-        <button class="tab" role="tab" aria-selected="false" data-unit="59b" style="--c:var(--t59b)"><i></i>59B</button>
-        <button class="tab" role="tab" aria-selected="false" data-unit="84a" style="--c:var(--t84a)"><i></i>84A · 84A1</button>
-        <button class="tab" role="tab" aria-selected="false" data-unit="84b" style="--c:var(--t84b)"><i></i>84B</button>
-        <button class="tab" role="tab" aria-selected="false" data-unit="84c" style="--c:var(--t84c)"><i></i>84C</button>
-      </div>
-
-      <div class="unit-grid">
-        <div class="unit-meta" id="unitMeta"><!-- JS 렌더링 --></div>
-        <div class="sheet" style="margin-top:0">
-          <div class="sheet-scroll"><img id="unitImg" src="images/unit_59a.jpg" alt="59A 타입 평면도" width="924" height="1316" decoding="async" /></div>
-          <div class="sheet-bar"><span id="unitCap">59A · ENDEARING TYPE 평면도</span><button class="zoom">크게 보기</button></div>
-        </div>
-      </div>
-      <p class="note" style="margin-top:16px">※ 평면도의 가구·소품은 유상옵션 및 전시품목이 포함되어 있으며, 실제 시공과 다를 수 있습니다. 확장형 기준이며 자세한 사항은 입주자모집공고문을 확인하시기 바랍니다.</p>
-    </div>
-  </section>
-
-  <!-- ===== 커뮤니티 ===== -->
-  <section id="community" class="sec sec--alt">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="sec-label">커뮤니티</p>
-        <h2 class="sec-title">어린이집부터 시니어존까지, 원스톱 커뮤니티</h2>
-        <p class="sec-lead">피트니스센터와 GX룸, 골프·스크린골프연습장, 작은 도서관과 독서실, 맘스스테이션과 돌봄센터, 시니어존, 단지 내 어린이집을 한 동선에 담았습니다.</p>
-      </div>
-      <div class="sheet" style="margin-top:0">
-        <div class="sheet-scroll"><img src="images/special_02_02.jpg" alt="원스톱 커뮤니티 시설 안내" loading="lazy" width="476" height="1568" decoding="async" /></div>
-        <div class="sheet-bar"><span>커뮤니티 층별 안내 (B2F·B1F·1F)</span><button class="zoom">크게 보기</button></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 특화 시스템 ===== -->
-  <section id="system" class="sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="sec-label">특화 시스템</p>
-        <h2 class="sec-title">수납은 넓게, 관리비는 가볍게</h2>
-        <p class="sec-lead">드레스룸과 팬트리, 현관창고까지 이어지는 수납 시스템에 홈네트워크·얼굴인식 출입·전기차 충전시설 등 스마트 솔루션을 더했습니다.</p>
-      </div>
-      <div class="tabs" role="tablist" aria-label="특화 시스템 선택">
-        <button class="tab" role="tab" aria-selected="true" data-sys="images/special_02_03.jpg" data-cap="공간 효율을 극대화한 특화 수납 시스템" style="--c:var(--plum-600)"><i></i>수납 시스템</button>
-        <button class="tab" role="tab" aria-selected="false" data-sys="images/special_02_04.jpg" data-cap="삶의 질을 높이는 첨단 스마트 솔루션" style="--c:var(--plum-600)"><i></i>스마트 솔루션</button>
-      </div>
-      <div class="sheet" style="margin-top:0">
-        <div class="sheet-scroll"><img id="sysImg" src="images/special_02_03.jpg" alt="특화 수납 시스템" width="868" height="1400" decoding="async" /></div>
-        <div class="sheet-bar"><span id="sysCap">공간 효율을 극대화한 특화 수납 시스템</span><button class="zoom">크게 보기</button></div>
-      </div>
-
-      <div class="sec-head" style="margin:clamp(48px,6vw,72px) 0 0">
-        <p class="sec-label">인테리어</p>
-        <h2 class="sec-title">거실부터 욕실까지, 마감이 만드는 차이</h2>
-      </div>
-      <div class="sheet">
-        <div class="sheet-scroll"><img src="images/interior.jpg" alt="프리미엄 인테리어 - 거실, 주방, 침실, 욕실" loading="lazy" width="280" height="1568" decoding="async" /></div>
-        <div class="sheet-bar"><span>PREMIUM INTERIOR</span><button class="zoom">크게 보기</button></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 브랜드 ===== -->
-  <section id="brand" class="sec sec--alt">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="sec-label">브랜드</p>
-        <h2 class="sec-title">주거의 품격을 높이는 예미지</h2>
-        <p class="sec-lead">평택 고덕지구 예미지는 2025년 5월 분양 431세대 중 최고 청약경쟁률 11.5대 1(84C)을 기록하며 조기 분양을 마쳤습니다. 국토교통부·매일경제 전국 살기좋은 아파트 종합대상 대통령상을 두 차례 수상한 브랜드입니다.</p>
-      </div>
-      <div class="sheet" style="margin-top:0">
-        <div class="sheet-scroll"><img src="images/brand.jpg" alt="예미지 브랜드 실적 및 수상 내역" loading="lazy" width="616" height="1568" decoding="async" /></div>
-        <div class="sheet-bar"><span>브랜드 실적 · 수상 내역</span><button class="zoom">크게 보기</button></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 분양안내 ===== -->
+  <!-- 분양안내 -->
   <section id="sale" class="sec">
     <div class="wrap">
       <div class="sec-head">
         <p class="sec-label">분양안내</p>
-        <h2 class="sec-title">분양 일정 및 공급 개요</h2>
-        <p class="sec-lead">2025년 12월 12일자 입주자모집공고 기준입니다. 현재 잔여세대 상담 가능 여부는 전화로 문의해 주세요.</p>
+        <h2 class="sec-title">분양 일정 및 청약 안내</h2>
       </div>
-
-      <ol class="steps">
-        <li data-done="y"><span class="flag">공고</span><p class="d">2025.12.12</p><p class="t">입주자모집공고</p></li>
-        <li data-done="y"><span class="flag">청약</span><p class="d">2025.12.22</p><p class="t">특별공급 접수</p></li>
-        <li data-done="y"><span class="flag">청약</span><p class="d">2025.12.23~24</p><p class="t">1순위 · 2순위 접수</p></li>
-        <li><span class="flag">입주</span><p class="d">2026.11</p><p class="t">입주 예정 (선시공 후분양)</p></li>
-      </ol>
-
       <div class="pricebox">
-        <h3>공급 개요</h3>
-        <p>아파트 지하 2층·지상 최고 20층 12개동 총 1,009세대(특별공급 646세대 포함) 및 부대복리시설 / 공급위치 경기도 이천시 중리지구 B3블록 중리동 518번지<br />
-        타입별 분양가와 계약금·중도금·잔금 납부 일정, 발코니 확장 및 유상옵션 금액은 입주자모집공고문 기준이며, 상담을 통해 안내해 드립니다.</p>
-        <p style="margin-top:14px"><a class="btn btn-plum" href="tel:1577-8664">1577-8664 분양 상담</a></p>
-      </div>
-
-      <div class="sheet">
-        <div class="sheet-scroll"><img src="images/document.jpg" alt="이천역 예미지 센트럴파크 분양안내문" loading="lazy" width="280" height="1568" decoding="async" /></div>
-        <div class="sheet-bar"><span>분양안내문 (공급금액 · 세대 타입 · 옵션)</span><button class="zoom">크게 보기</button></div>
+        <h3>선시공 후분양 단지 안내</h3>
+        <p>상세 분양가, 발코니 확장비, 중도금 대출 조건 및 정확한 모델하우스 오픈 일정은 관심고객 등록 시 담당자를 통해 개별 안내드립니다.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== 관심고객 등록 ===== -->
+  <!-- 관심고객등록 -->
   <section id="regist" class="sec">
     <div class="wrap">
       <div class="sec-head">
-        <p class="sec-label">관심고객 등록</p>
-        <h2 class="sec-title">등록해 주시면 분양 일정과 잔여세대를 먼저 안내드립니다</h2>
-        <p class="sec-lead" style="color:#CBBEDB">남겨주신 연락처로 담당자가 직접 연락드립니다. 등록 내용은 분양 상담 목적으로만 사용합니다.</p>
+        <p class="sec-label" style="color:#DCC9A8">VIP 등록</p>
+        <h2 class="sec-title" style="color:#fff">이천역 예미지 센트럴파크 관심고객등록</h2>
+        <p class="sec-lead" style="color:#D9CCE9">관심고객으로 등록하시면 잔여 세대 분양 정보, 청약 가이드, 홍보관 방문 예약 혜택을 가장 먼저 보내드립니다.</p>
       </div>
 
-      <form id="registForm" novalidate>
+      <form id="consultForm" onsubmit="handleSubmit(event)">
         <div class="form-grid">
           <div>
-            <label class="lb" for="fname">이름</label>
-            <input class="inp" type="text" id="fname" name="name" placeholder="성함을 입력해 주세요" autocomplete="name" required />
+            <label class="lb" for="userName">고객 성함 *</label>
+            <input class="inp" type="text" id="userName" required placeholder="성함을 입력하세요" />
           </div>
           <div>
-            <label class="lb" for="fphone">연락처</label>
-            <input class="inp" type="tel" id="fphone" name="phone" placeholder="010-0000-0000" inputmode="numeric" autocomplete="tel" required />
+            <label class="lb" for="userPhone">연락처 *</label>
+            <input class="inp" type="tel" id="userPhone" required placeholder="010-1234-5678" />
           </div>
-          <div>
-            <label class="lb" for="ftype">관심 타입</label>
-            <select class="inp" id="ftype" name="type">
-              <option value="미정">아직 정하지 않았습니다</option>
-              <option value="59A">59A (297세대)</option>
-              <option value="59B">59B (70세대)</option>
-              <option value="84A">84A · 84A1 (476세대)</option>
-              <option value="84B">84B (106세대)</option>
-              <option value="84C">84C (60세대)</option>
-            </select>
-          </div>
-          <div>
-            <label class="lb" for="ftime">연락 희망 시간</label>
-            <select class="inp" id="ftime" name="time">
-              <option value="아무때나">아무 때나 괜찮습니다</option>
-              <option value="오전">오전 (09~12시)</option>
-              <option value="오후">오후 (12~18시)</option>
-              <option value="저녁">저녁 (18시 이후)</option>
+          <div class="f-full">
+            <label class="lb" for="userType">관심 평형</label>
+            <select class="inp" id="userType">
+              <option value="84A">84㎡ A 타입</option>
+              <option value="84B">84㎡ B 타입</option>
+              <option value="84C">84㎡ C 타입</option>
+              <option value="59A">59㎡ A 타입</option>
+              <option value="59B">59㎡ B 타입</option>
             </select>
           </div>
           <div class="f-full">
-            <label class="lb" for="fmemo">문의 내용 (선택)</label>
-            <textarea class="inp" id="fmemo" name="memo" placeholder="궁금한 점을 적어주시면 상담 시 먼저 확인해 드립니다."></textarea>
+            <label class="lb" for="userMemo">문의사항</label>
+            <textarea class="inp" id="userMemo" placeholder="분양가, 청약 조건 등 궁금하신 내용을 남겨주세요"></textarea>
+          </div>
+          <div class="f-full agree">
+            <input type="checkbox" id="userAgree" required checked />
+            <p><b>개인정보 수집 및 이용 동의</b>수집항목: 성명, 연락처, 관심타입 | 수집목적: 분양 상담 및 홍보관 방문 안내 | 보유기간: 분양 완료 시까지 (동의 철회 시 즉시 파기)</p>
           </div>
           <div class="f-full">
-            <div class="agree">
-              <input type="checkbox" id="fagree" required />
-              <p>
-                <b>개인정보 수집·이용 동의 (필수)</b>
-                수집항목: 성명, 연락처, 문의내용 · 수집목적: 분양 안내 및 상담 · 보유기간: 분양 종료 후 6개월 이내 파기.
-                동의를 거부하실 수 있으나, 이 경우 상담 연락이 어렵습니다.
-              </p>
-            </div>
-          </div>
-          <div class="f-full">
-            <button type="submit" class="btn btn-gold" style="width:100%;padding:17px">관심고객 등록하기</button>
-            <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn btn-gold" style="width:100%;padding:16px;font-size:16px">관심고객 등록 완료하기</button>
+            <div id="formMsg" class="form-msg"></div>
           </div>
         </div>
       </form>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="wrap">
-    <p class="fbrand">이천역 예미지 센트럴파크</p>
+    <div class="fbrand">이천역 예미지 센트럴파크</div>
     <dl>
-      <dt>분양문의</dt><dd><a href="tel:1577-8664"><strong style="color:#fff">1577-8664</strong></a></dd>
-      <dt>대지위치</dt><dd>경기도 이천시 중리동 518 (중리지구 B3블록)</dd>
-    </dl>
-    <dl>
-      <dt>분양대행</dt><dd>(주)윤성디앤씨</dd>
-      <dt>사업자등록번호</dt><dd>616-88-02344</dd>
-      <dt>주소</dt><dd>경기도 평택시 고덕면 도시지원1길 16, 516</dd>
+      <dt>현장위치</dt><dd>경기도 이천시 중리동 518 (중리지구 B3블록)</dd>
+      <dt>분양문의</dt><dd>1577-8664</dd>
+      <dt>시공사</dt><dd>금성백조</dd>
     </dl>
     <p class="disc">
-      본 홈페이지는 2025년 12월 12일자 입주자모집공고를 바탕으로 제작되었으며, 현장으로부터 제공받은 안내자료를 기준으로 합니다.<br />
-      사용된 이미지(조감도·투시도·평면도)는 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있으며, 일부 가구·소품은 유상옵션 및 전시품목입니다.<br />
-      단지 주변 개발계획 및 교통계획은 관계기관의 사정에 따라 변경될 수 있습니다. 계약 전 반드시 입주자모집공고문과 현장을 확인하시기 바랍니다.<br />
-      © 이천역 예미지 센트럴파크 분양 안내. 본 사이트는 분양 홍보를 위한 안내용 홈페이지입니다.
+      ※ 본 웹페이지의 CG, 일러스트, 이미지 컷 및 기재 사항은 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.<br />
+      ※ 지구단위계획 및 인허가 과정에 따라 단지 배치 및 세부 사양은 변경될 수 있으므로 분양공고 및 홍보관을 통해 최종 확인하시기 바랍니다.
     </p>
   </div>
 </footer>
 
-<!-- ===== 플로팅 버튼 (PC) ===== -->
+<!-- 플로팅 버튼 -->
 <div class="float">
-  <button class="f-top" id="toTop" aria-label="맨 위로 이동">TOP</button>
-  <a class="f-tel" href="tel:1577-8664">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-    대표번호 1577-8664
-  </a>
-  <button class="f-reg" data-goto="#regist">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-    관심고객등록
-  </button>
+  <a class="f-tel" href="tel:1577-8664">전화상담 1577-8664</a>
+  <a class="f-reg" href="#regist">관심고객등록</a>
 </div>
 
-<!-- ===== 플로팅 하단바 (모바일) ===== -->
+<!-- 모바일 전용 하단 바 -->
 <div class="mbar">
-  <a class="m-tel" href="tel:1577-8664">
-    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-    대표번호
-  </a>
-  <button class="m-reg" data-goto="#regist">
-    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-    관심고객등록
-  </button>
-</div>
-
-<!-- ===== 이미지 확대 ===== -->
-<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="이미지 확대 보기">
-  <button class="lb-close" id="lbClose" aria-label="닫기">×</button>
-  <img id="lbImg" src="" alt="" />
+  <a class="m-tel" href="tel:1577-8664">전화 상담</a>
+  <a class="m-reg" href="#regist">관심고객 등록</a>
 </div>
 
 <script>
-/* =========================================================
-   설정값 — 운영 시 이 부분만 바꾸면 됩니다
-   ========================================================= */
-const CONFIG = {
-  tel: "1577-8664",
-  // 관심고객 등록 데이터를 받을 주소.
-  // 예) 구글 앱스스크립트 웹앱 URL, Formspree(https://formspree.io/f/xxxx) 등
-  // 비워두면 문자(SMS) 발송 방식으로 대체 동작합니다.
-  formEndpoint: ""
-};
-
-/* ---------- 브로슈어 시트 접기/펼치기 ---------- */
-document.querySelectorAll(".sheet").forEach(sheet=>{
-  const bar = sheet.querySelector(".sheet-bar");
-  const zoomBtn = bar.querySelector(".zoom");
-  const isUnit = !!sheet.closest(".unit-grid");   // 평면도는 항상 펼친 상태로 둔다
-  sheet.dataset.open = isUnit ? "true" : "false";
-
-  const box = document.createElement("div");
-  box.className = "sheet-btns";
-  bar.appendChild(box);
-
-  if(!isUnit){
-    const more = document.createElement("button");
-    more.className = "more";
-    more.textContent = "자세히 보기";
-    more.setAttribute("aria-expanded","false");
-    more.addEventListener("click", ()=>{
-      const open = sheet.dataset.open === "true";
-      sheet.dataset.open = open ? "false" : "true";
-      more.textContent = open ? "자세히 보기" : "접기";
-      more.setAttribute("aria-expanded", String(!open));
-      if(open) sheet.scrollIntoView({block:"nearest", behavior:"smooth"});
-    });
-    box.appendChild(more);
-  }
-  box.appendChild(zoomBtn);
-});
-
-/* ---------- 세대 타입 데이터 ---------- */
-const UNITS = {
-  "59a": {name:"59A", en:"ENDEARING TYPE", color:"var(--t59a)", house:"297세대",
-    exclusive:"59.9870㎡", supply:"80.1853㎡", common:"20.1983㎡", contract:"124.4877㎡",
-    img:"images/unit_59a.jpg",
-    desc:"방 3 · 욕실 2 구성의 실속형 평면. 드레스룸과 다용도실을 갖춘 확장형 설계입니다."},
-  "59b": {name:"59B", en:"ENDEARING TYPE", color:"var(--t59b)", house:"70세대",
-    exclusive:"59.9870㎡", supply:"80.1735㎡", common:"20.1865㎡", contract:"124.4759㎡",
-    img:"images/unit_59b.jpg",
-    desc:"59A와 같은 전용면적에 안방 발코니 형태를 달리한 코너 배치 평면입니다."},
-  "84a": {name:"84A · 84A1", en:"MODERN TYPE", color:"var(--t84a)", house:"423세대 · 53세대",
-    exclusive:"84.7884㎡", supply:"111.4967㎡", common:"26.7083㎡", contract:"174.1156㎡",
-    img:"images/unit_84a.jpg",
-    desc:"단지 내 가장 많은 476세대 공급. 알파룸과 팬트리를 갖춘 4Bay 판상형 구조입니다."},
-  "84b": {name:"84B", en:"DELICATE TYPE", color:"var(--t84b)", house:"106세대",
-    exclusive:"84.9970㎡", supply:"112.9281㎡", common:"27.9311㎡", contract:"175.7012㎡",
-    img:"images/unit_84b.jpg",
-    desc:"현관창고와 알파룸, 안방 드레스룸까지 수납을 강화한 평면입니다."},
-  "84c": {name:"84C", en:"SENSIBLE TYPE", color:"var(--t84c)", house:"60세대",
-    exclusive:"84.9665㎡", supply:"112.2044㎡", common:"27.2379㎡", contract:"174.9551㎡",
-    img:"images/unit_84c.jpg",
-    desc:"주방·식당을 중심에 둔 희소 타입. 침실1 드레스룸과 팬트리를 갖췄습니다."}
-};
-
-function renderUnit(key){
-  const u = UNITS[key];
-  const box = document.getElementById("unitMeta");
-  box.style.setProperty("--c", u.color);
-  box.innerHTML = `
-    <p class="tname">${u.name}</p>
-    <p class="tsub">${u.en}</p>
-    <p><span class="hh">${u.house}</span></p>
-    <table>
-      <tr><th>주거전용면적</th><td>${u.exclusive}</td></tr>
-      <tr><th>공급면적</th><td>${u.supply}</td></tr>
-      <tr><th>주거공용면적</th><td>${u.common}</td></tr>
-      <tr><th>계약면적</th><td>${u.contract}</td></tr>
-    </table>
-    <p style="font-size:14px;color:var(--ink-60);margin:16px 0 0">${u.desc}</p>`;
-  const img = document.getElementById("unitImg");
-  img.src = u.img; img.alt = u.name + " 타입 평면도";
-  document.getElementById("unitCap").textContent = `${u.name} · ${u.en} 평면도`;
-}
-
-document.querySelectorAll("[data-unit]").forEach(btn=>{
-  btn.addEventListener("click", ()=>{
-    document.querySelectorAll("[data-unit]").forEach(b=>b.setAttribute("aria-selected","false"));
-    btn.setAttribute("aria-selected","true");
-    renderUnit(btn.dataset.unit);
-  });
-});
-renderUnit("59a");
-
-/* ---------- 특화 시스템 탭 ---------- */
-document.querySelectorAll("[data-sys]").forEach(btn=>{
-  btn.addEventListener("click", ()=>{
-    document.querySelectorAll("[data-sys]").forEach(b=>b.setAttribute("aria-selected","false"));
-    btn.setAttribute("aria-selected","true");
-    const img = document.getElementById("sysImg");
-    img.src = btn.dataset.sys; img.alt = btn.dataset.cap;
-    document.getElementById("sysCap").textContent = btn.dataset.cap;
-  });
-});
-
-/* ---------- 이동 버튼 ---------- */
-document.querySelectorAll("[data-goto]").forEach(el=>{
-  el.addEventListener("click", ()=>{
-    document.querySelector(el.dataset.goto).scrollIntoView({behavior:"smooth", block:"start"});
-  });
-});
-document.getElementById("toTop").addEventListener("click", ()=>window.scrollTo({top:0, behavior:"smooth"}));
-
-/* ---------- 현재 섹션 표시 ---------- */
-const links = [...document.querySelectorAll("nav.gnb a")];
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(!e.isIntersecting) return;
-    links.forEach(a=>a.setAttribute("aria-current", a.getAttribute("href") === "#"+e.target.id ? "true" : "false"));
-  });
-},{rootMargin:"-45% 0px -50% 0px"});
-document.querySelectorAll("main section[id]").forEach(s=>obs.observe(s));
-
-/* ---------- 이미지 확대 ---------- */
-const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lbImg");
-document.addEventListener("click", e=>{
-  const b = e.target.closest(".zoom");
-  if(!b) return;
-  const img = b.closest(".sheet").querySelector("img");
-  lbImg.src = img.src; lbImg.alt = img.alt;
-  lb.classList.add("on"); document.body.style.overflow = "hidden";
-});
-function closeLb(){ lb.classList.remove("on"); document.body.style.overflow=""; }
-document.getElementById("lbClose").addEventListener("click", closeLb);
-lb.addEventListener("click", e=>{ if(e.target === lb) closeLb(); });
-document.addEventListener("keydown", e=>{ if(e.key === "Escape") closeLb(); });
-
-/* ---------- 연락처 자동 하이픈 ---------- */
-const phone = document.getElementById("fphone");
-phone.addEventListener("input", ()=>{
-  let v = phone.value.replace(/[^0-9]/g,"").slice(0,11);
-  if(v.length > 7) v = v.slice(0,3)+"-"+v.slice(3,7)+"-"+v.slice(7);
-  else if(v.length > 3) v = v.slice(0,3)+"-"+v.slice(3);
-  phone.value = v;
-});
-
-/* ---------- 관심고객 등록 ---------- */
-const form = document.getElementById("registForm"), msg = document.getElementById("formMsg");
-form.addEventListener("submit", async e=>{
+function handleSubmit(e) {
   e.preventDefault();
-  const name = form.name.value.trim();
-  const tel  = form.phone.value.trim();
-  const agree = document.getElementById("fagree").checked;
+  const name = document.getElementById('userName').value.trim();
+  const phone = document.getElementById('userPhone').value.trim();
+  const msg = document.getElementById('formMsg');
 
-  const show = (text, cls)=>{ msg.textContent = text; msg.className = "form-msg " + cls; };
-
-  if(name.length < 2){ show("성함을 입력해 주세요.", "err"); form.name.focus(); return; }
-  if(!/^01[016789]-?\d{3,4}-?\d{4}$/.test(tel)){ show("휴대폰 번호를 정확히 입력해 주세요.", "err"); form.phone.focus(); return; }
-  if(!agree){ show("개인정보 수집·이용에 동의해 주세요.", "err"); document.getElementById("fagree").focus(); return; }
-
-  const data = {
-    name, phone: tel,
-    type: form.type.value,
-    time: form.time.value,
-    memo: form.memo.value.trim(),
-    site: "이천역 예미지 센트럴파크",
-    at: new Date().toLocaleString("ko-KR")
-  };
-
-  if(!CONFIG.formEndpoint){
-    // 전송 주소가 없을 때: 문자 앱으로 내용을 담아 전달
-    const body = `[관심고객등록] ${data.site}\n성함: ${data.name}\n연락처: ${data.phone}\n관심타입: ${data.type}\n희망시간: ${data.time}\n문의: ${data.memo || "-"}`;
-    location.href = `sms:${CONFIG.tel}?&body=${encodeURIComponent(body)}`;
-    show("문자 앱으로 등록 내용을 전달합니다. 전송 버튼을 눌러주세요.", "ok");
+  if(!name || !phone) {
+    msg.className = "form-msg err";
+    msg.textContent = "성함과 연락처를 모두 입력해 주세요.";
     return;
   }
 
-  try{
-    show("등록 중입니다...", "");
-    const res = await fetch(CONFIG.formEndpoint, {
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body: JSON.stringify(data)
-    });
-    if(!res.ok) throw new Error(res.status);
-    form.reset();
-    show("등록이 완료되었습니다. 담당자가 곧 연락드리겠습니다.", "ok");
-  }catch(err){
-    show(`등록에 실패했습니다. ${CONFIG.tel}로 전화 주시면 바로 안내해 드리겠습니다.`, "err");
-  }
-});
+  msg.className = "form-msg ok";
+  msg.textContent = "관심고객 등록이 정상 접수되었습니다. 전문 상담원이 곧 연락드리겠습니다.";
+  document.getElementById('consultForm').reset();
+}
 </script>
 </body>
 </html>
