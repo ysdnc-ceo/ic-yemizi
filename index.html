@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>이천 중리지구 예미지 | 총 1,009세대 대단지 · 공식 분양안내</title>
+<title>이천 중리지구 예미지 | 총 1,009세대 대단지 공식 분양안내</title>
 <meta name="description" content="이천 중리지구 B3블록, 이천 중리지구 예미지. 지하 2층~지상 20층 12개동 총 1,009세대. 전용 59㎡·84㎡. 2026년 11월 입주 예정. 분양문의 1577-8664" />
 <meta property="og:title" content="이천 중리지구 예미지" />
 <meta property="og:description" content="이천 중리지구 총 1,009세대 대단지 · 전용 59㎡·84㎡ · 2026년 11월 입주 예정" />
+<meta property="og:image" content="overview1.jpg" />
 <meta property="og:type" content="website" />
 
 <!-- 웹폰트 -->
@@ -66,11 +67,11 @@ nav.gnb a:hover{color:#fff;background:rgba(255,255,255,.1)}
 .head-tel{color:#fff;font-weight:700;font-size:16px;border:1px solid rgba(255,255,255,.3);padding:6px 14px;border-radius:999px;white-space:nowrap}
 @media (max-width:860px){.head-tel{display:none}}
 
-/* 히어로 */
+/* 히어로 (overview1.jpg) */
 .hero{position:relative;padding-top:var(--head-h);background:var(--plum-900);color:#fff}
-.hero-img{position:relative;height:clamp(360px,56vh,540px)}
+.hero-img{position:relative;min-height:420px;height:clamp(420px,58vh,560px);background:var(--plum-700)}
 .hero-img img{width:100%;height:100%;object-fit:cover}
-.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,15,66,.5) 0%,rgba(42,15,66,.95) 100%)}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,15,66,.3) 0%,rgba(42,15,66,.95) 100%)}
 .hero-copy{position:absolute;inset:auto 0 0;padding-bottom:28px;z-index:2}
 .hero-copy p{color:#DCC9A8;font-size:13.5px;margin-bottom:8px}
 .hero-copy h1{margin:0 0 16px;font-size:clamp(28px,4.5vw,50px)}
@@ -91,34 +92,28 @@ nav.gnb a:hover{color:#fff;background:rgba(255,255,255,.1)}
 /* 섹션 공통 */
 .sec{padding:clamp(50px,6vw,85px) 0}
 .sec--alt{background:var(--white)}
-.sec-head{margin-bottom:30px}
+.sec-head{margin-bottom:28px}
 
 /* 사업개요 */
-.spec{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;border-top:1px solid var(--line)}
+.spec{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;border-top:1px solid var(--line);margin-bottom:30px}
 .spec div{display:grid;grid-template-columns:120px 1fr;padding:14px 2px;border-bottom:1px solid var(--line)}
 .spec dt{color:var(--plum-600);font-weight:600}
 .spec dd{margin:0}
 @media (max-width:760px){.spec{grid-template-columns:1fr}}
 
 /* 이미지 쇼케이스 박스 */
-.img-box{margin-top:24px;border:1px solid var(--line);background:#fff;padding:12px;border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,0.04)}
-.img-box img{width:100%;border-radius:2px}
-.img-box p{font-size:13px;color:var(--ink-60);margin:10px 4px 2px;text-align:center}
+.img-box{margin-top:20px;border:1px solid var(--line);background:#fff;padding:10px;border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,0.04);text-align:center}
+.img-box img{width:100%;margin:0 auto;border-radius:2px}
 
-/* 프리미엄 카드 */
-.prem{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.prem article{background:#fff;padding:24px 20px}
-.prem h3{margin:0 0 8px;font-size:17px;font-family:"Gowun Batang",serif}
-.prem p{margin:0;font-size:13.5px;color:var(--ink-60)}
-.prem .idx{font-size:11.5px;color:var(--bronze);font-weight:700;display:block;margin-bottom:8px}
-@media (max-width:960px){.prem{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:500px){.prem{grid-template-columns:1fr}}
+/* 그리드 이미지 박스 */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+@media (max-width:700px){.grid-2{grid-template-columns:1fr}}
 
-/* 평면도 탭 */
+/* 평면도 영역 */
 .tab-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
 .tab-btn{border:1px solid var(--line);background:#fff;color:var(--ink-60);padding:10px 18px;font-weight:600;border-radius:3px;cursor:pointer}
 .tab-btn.active{background:var(--plum-700);color:#fff;border-color:var(--plum-700)}
-.unit-content{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);padding:24px;border-radius:4px}
+.unit-content{display:grid;grid-template-columns:1.2fr 0.8fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);padding:24px;border-radius:4px}
 .unit-desc h3{font-size:26px;color:var(--plum-900);margin:0 0 14px;font-family:"Gowun Batang",serif}
 .unit-desc table{width:100%;border-collapse:collapse;font-size:14px}
 .unit-desc th{text-align:left;color:var(--ink-60);padding:8px 0;border-bottom:1px solid var(--line)}
@@ -156,8 +151,9 @@ footer b{color:#fff}
     <nav class="gnb">
       <ul>
         <li><a href="#overview">사업개요</a></li>
-        <li><a href="#complex">단지배치도</a></li>
-        <li><a href="#premium">입지/프리미엄</a></li>
+        <li><a href="#place">입지환경</a></li>
+        <li><a href="#premium">프리미엄</a></li>
+        <li><a href="#special">단지특화</a></li>
         <li><a href="#unit">평면안내</a></li>
         <li><a href="#regist">관심고객등록</a></li>
       </ul>
@@ -168,11 +164,10 @@ footer b{color:#fff}
 
 <main id="top">
 
-  <!-- 1. 메인 히어로 조감도 -->
+  <!-- 1. 메인 히어로 조감도 (overview1.jpg) -->
   <section class="hero">
     <div class="hero-img">
-      <!-- 깃허브에 올리신 조감도 이미지 파일 경로로 변경 가능 -->
-      <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80" alt="이천 중리지구 예미지 조감도" />
+      <img src="overview1.jpg" alt="이천 중리지구 예미지 메인 조감도" />
       <div class="wrap hero-copy">
         <p>이천 중리지구 B3블록 | 경기도 이천시 중리동 518</p>
         <h1 class="display">이천 중리지구 예미지</h1>
@@ -194,7 +189,7 @@ footer b{color:#fff}
     </div>
   </section>
 
-  <!-- 2. 사업개요 -->
+  <!-- 2. 사업개요 (overview.jpg) -->
   <section id="overview" class="sec sec--alt">
     <div class="wrap">
       <div class="sec-head">
@@ -213,55 +208,87 @@ footer b{color:#fff}
         <div><dt>공급타입</dt><dd>전용 59㎡ A·B / 84㎡ A·B·C</dd></div>
         <div><dt>시공사</dt><dd>금성백조</dd></div>
       </div>
-    </div>
-  </section>
-
-  <!-- 3. 단지배치도 이미지 섹션 -->
-  <section id="complex" class="sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="sec-label">COMPLEX PLAN</p>
-        <h2 class="sec-title">단지 및 동호수 배치도</h2>
-        <p class="sec-lead">전 세대 남향 위주 배치와 쾌적한 17.54% 건폐율로 넓은 동간거리 확보</p>
-      </div>
 
       <div class="img-box">
-        <!-- 깃허브에 올리신 단지배치도 파일 경로로 변경 가능 -->
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="단지 배치도" />
-        <p>※ 상기 단지배치도 및 이미지는 인허가 과정에 따라 일부 변경될 수 있습니다.</p>
+        <img src="overview.jpg" alt="사업개요 종합안내" />
       </div>
     </div>
   </section>
 
-  <!-- 4. 입지환경 / 프리미엄 -->
+  <!-- 3. 입지환경 (place.jpg) -->
+  <section id="place" class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-label">LOCATION</p>
+        <h2 class="sec-title">입지환경</h2>
+        <p class="sec-lead">경강선 이천역 생활권, 초품아, 원스톱 행정타운 인프라를 한눈에</p>
+      </div>
+      <div class="img-box">
+        <img src="place.jpg" alt="입지환경 지도" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 프리미엄 (premium.jpg) -->
   <section id="premium" class="sec sec--alt">
     <div class="wrap">
       <div class="sec-head">
-        <p class="sec-label">PREMIUM 8</p>
-        <h2 class="sec-title">입지 프리미엄</h2>
-        <p class="sec-lead">교통, 학군, 행정, 힐링 자연을 모두 도보권에서 누리는 완성형 인프라</p>
+        <p class="sec-label">PREMIUM</p>
+        <h2 class="sec-title">프리미엄 안내</h2>
+        <p class="sec-lead">중리지구의 독보적인 미래가치와 프리미엄</p>
       </div>
-
-      <div class="prem">
-        <article><span class="idx">01. 희소가치</span><h3>중리지구 마지막 민간분양</h3><p>이천 신흥 주거타운 중리지구의 마지막 프리미엄 민간분양 단지</p></article>
-        <article><span class="idx">02. 안심학군</span><h3>유치원·초등학교 초품아</h3><p>단지 바로 앞 중리초(2026년 3월 개교 예정) 및 병설유치원 도보통학</p></article>
-        <article><span class="idx">03. 쾌속교통</span><h3>경강선 이천역 생활권</h3><p>경강선 이천역, 중부고속도로, 영동고속도로를 통한 판교·강남 접근성</p></article>
-        <article><span class="idx">04. 중심인프라</span><h3>원스톱 행정타운</h3><p>이천시청, 세무서, 경찰서, 종합의료원 등 풍부한 관공서 인접</p></article>
-        <article><span class="idx">05. 힐링자연</span><h3>단지 앞 근린공원</h3><p>대규모 근린공원 및 설봉산 자락의 쾌적한 숲세권 에코 라이프</p></article>
-        <article><span class="idx">06. 안심시공</span><h3>선시공 후분양</h3><p>실제 시공 상태를 직접 확인하고 2026년 11월 빠른 입주 가능</p></article>
-        <article><span class="idx">07. 브랜드</span><h3>금성백조 예미지</h3><p>살기좋은 아파트 대통령상 수상 등 전국에서 검증된 프리미엄 브랜드</p></article>
-        <article><span class="idx">08. 혁신설계</span><h3>4Bay 판상형 특화</h3><p>맞통풍 통경축 설계 및 팬트리, 알파룸 등 수납공간 극대화</p></article>
+      <div class="img-box">
+        <img src="premium.jpg" alt="프리미엄 안내" />
       </div>
     </div>
   </section>
 
-  <!-- 5. 세대안내 (평면도 탭 전환) -->
+  <!-- 5. 단지특화 & 시스템 (special_01, special_02 시리즈) -->
+  <section id="special" class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-label">SPECIAL SYSTEM</p>
+        <h2 class="sec-title">단지 및 특화설계</h2>
+        <p class="sec-lead">스마트 라이프를 실현하는 예미지만의 특화 시스템</p>
+      </div>
+
+      <div class="img-box">
+        <img src="special_01.jpg" alt="단지 특화설계" />
+      </div>
+
+      <div class="grid-2">
+        <div class="img-box"><img src="special_02_01.jpg" alt="특화 시스템 1" /></div>
+        <div class="img-box"><img src="special_02_02.jpg" alt="특화 시스템 2" /></div>
+        <div class="img-box"><img src="special_02_03.jpg" alt="특화 시스템 3" /></div>
+        <div class="img-box"><img src="special_02_04.jpg" alt="특화 시스템 4" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 인테리어 및 브랜드 (interior.jpg, brand.jpg) -->
+  <section class="sec sec--alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-label">INTERIOR & BRAND</p>
+        <h2 class="sec-title">인테리어 및 브랜드</h2>
+      </div>
+
+      <div class="img-box">
+        <img src="interior.jpg" alt="인테리어 안내" />
+      </div>
+      <div class="img-box" style="margin-top:24px">
+        <img src="brand.jpg" alt="금성백조 예미지 브랜드" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 세대 평면안내 (unit_59a ~ unit_84c 클릭 전환) -->
   <section id="unit" class="sec">
     <div class="wrap">
       <div class="sec-head">
         <p class="sec-label">UNIT PLAN</p>
         <h2 class="sec-title">세대 평면안내</h2>
-        <p class="sec-lead">원하시는 평형 버튼을 누르면 평면 사양과 이미지를 확인할 수 있습니다.</p>
+        <p class="sec-lead">버튼을 클릭하시면 해당 타입의 평면도를 확인하실 수 있습니다.</p>
       </div>
 
       <div class="tab-btns">
@@ -272,21 +299,21 @@ footer b{color:#fff}
         <button class="tab-btn" onclick="showUnit('59b', this)">59㎡ B</button>
       </div>
 
-      <div class="unit-content" id="unitBox">
-        <img id="unitImg" src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=800&q=80" alt="평면도" />
+      <div class="unit-content">
+        <img id="unitImg" src="unit_84a.jpg" alt="84A 평면도" />
         <div class="unit-desc">
           <h3 id="unitTitle">84㎡ A 타입 (413세대)</h3>
           <table>
             <tr><th>전용면적</th><td id="spec1">84.9750㎡</td></tr>
             <tr><th>공급면적</th><td id="spec2">113.1230㎡</td></tr>
-            <tr><th>구조특징</th><td id="spec3">채광과 통풍이 우수한 4Bay 맞통풍 판상형 구조, 대형 드레스룸</td></tr>
+            <tr><th>구조특징</th><td id="spec3">4Bay 맞통풍 판상형 구조, 대형 팬트리 및 드레스룸</td></tr>
           </table>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. 관심고객등록 폼 -->
+  <!-- 8. 관심고객등록 폼 -->
   <section id="regist" class="sec">
     <div class="wrap">
       <div class="sec-head">
@@ -334,7 +361,7 @@ footer b{color:#fff}
   <div class="wrap">
     <b>이천 중리지구 예미지</b>
     <p>현장위치: 경기도 이천시 중리동 518 (중리지구 B3블록) | 분양문의: 1577-8664 | 시공: 금성백조</p>
-    <p style="font-size:11px;opacity:0.6">※ 본 홈페이지의 CG 및 이미지 사진은 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.</p>
+    <p style="font-size:11px;opacity:0.6">※ 본 홈페이지의 CG 및 이미지 사진은 소비자의 이해를돕기 위한 것으로 실제와 차이가 있을 수 있습니다.</p>
   </div>
 </footer>
 
@@ -349,12 +376,13 @@ footer b{color:#fff}
 </div>
 
 <script>
+// 5개 평면도 이미지 및 데이터 연동
 const unitData = {
-  '84a': { title: '84㎡ A 타입 (413세대)', spec1: '84.9750㎡', spec2: '113.1230㎡', spec3: '4Bay 판상형 맞통풍 설계, 대형 팬트리 및 드레스룸' },
-  '84b': { title: '84㎡ B 타입 (238세대)', spec1: '84.9810㎡', spec2: '113.2140㎡', spec3: '이면 개방형 타워형 구조, 넓은 거실과 독립적 침실 배치' },
-  '84c': { title: '84㎡ C 타입 (122세대)', spec1: '84.9620㎡', spec2: '112.9800㎡', spec3: '공간 효율을 극대화한 실속형 맞통풍 평면' },
-  '59a': { title: '59㎡ A 타입 (140세대)', spec1: '59.9540㎡', spec2: '80.1250㎡', spec3: '선호도 높은 4Bay 소형 혁신 평면' },
-  '59b': { title: '59㎡ B 타입 (96세대)', spec1: '59.9620㎡', spec2: '80.2100㎡', spec3: '감각적인 공간 구성과 채광 극대화 타워형 설계' }
+  '84a': { img: 'unit_84a.jpg', title: '84㎡ A 타입 (413세대)', spec1: '84.9750㎡', spec2: '113.1230㎡', spec3: '4Bay 맞통풍 판상형 구조, 대형 팬트리 및 드레스룸' },
+  '84b': { img: 'unit_84b.jpg', title: '84㎡ B 타입 (238세대)', spec1: '84.9810㎡', spec2: '113.2140㎡', spec3: '채광과 조망이 우수한 이면 개방형 특화 평면' },
+  '84c': { img: 'unit_84c.jpg', title: '84㎡ C 타입 (122세대)', spec1: '84.9620㎡', spec2: '112.9800㎡', spec3: '공간 효율을 극대화한 실속형 맞통풍 평면' },
+  '59a': { img: 'unit_59a.jpg', title: '59㎡ A 타입 (140세대)', spec1: '59.9540㎡', spec2: '80.1250㎡', spec3: '선호도 높은 4Bay 소형 혁신 평면' },
+  '59b': { img: 'unit_59b.jpg', title: '59㎡ B 타입 (96세대)', spec1: '59.9620㎡', spec2: '80.2100㎡', spec3: '넓은 거실과 독립적인 침실 배치의 타워형 설계' }
 };
 
 function showUnit(type, btn) {
@@ -362,6 +390,7 @@ function showUnit(type, btn) {
   btn.classList.add('active');
   
   const d = unitData[type];
+  document.getElementById('unitImg').src = d.img;
   document.getElementById('unitTitle').textContent = d.title;
   document.getElementById('spec1').textContent = d.spec1;
   document.getElementById('spec2').textContent = d.spec2;
