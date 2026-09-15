@@ -10,19 +10,9 @@
 <meta property="og:image" content="overview1.jpg" />
 <meta property="og:type" content="website" />
 
-<!-- 웹폰트: 서울남산체 (Seoul Sans) & 프리텐다드 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<!-- 묵직하고 고급스러운 서울남산체(SeoulNamsan) & 나눔스퀘어 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css" />
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-
-/* 서울서체 (SeoulNamsan) 웹폰트 CDN */
-@font-face {
-  font-family: 'SeoulNamsan';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanM.woff') format('woff');
-  font-weight: 500;
-  font-display: swap;
-}
 @font-face {
   font-family: 'SeoulNamsan';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanB.woff') format('woff');
@@ -44,9 +34,9 @@
   --bronze:#9C8A5E;
   --paper:#F7F4EF;
   --white:#fff;
-  --ink:#241C2B;
-  --ink-60:#615A69;
-  --line:#E3DED7;
+  --ink:#1D1724;
+  --ink-60:#4F4957;
+  --line:#DDD7CE;
   --head-h:62px;
   --wrap:1180px;
 }
@@ -54,8 +44,10 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;background:var(--paper);color:var(--ink);
-  font-family:"SeoulNamsan","Pretendard","Noto Sans KR",sans-serif;
-  font-size:16px;line-height:1.7;letter-spacing:-0.02em;
+  font-family:"SeoulNamsan","NanumSquare",sans-serif;
+  font-size:16px;line-height:1.65;letter-spacing:-0.03em;
+  font-weight:700;
+  -webkit-font-smoothing:antialiased;
 }
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
@@ -64,29 +56,30 @@ button{font-family:inherit}
 .wrap{width:min(100% - 40px,var(--wrap));margin-inline:auto}
 @media (max-width:640px){.wrap{width:calc(100% - 24px)}}
 
-/* 타이포 */
+/* 묵직한 볼드 타이포그래피 */
 .display{
-  font-family:"SeoulNamsan","Pretendard",sans-serif;
+  font-family:"SeoulNamsan","NanumSquare",sans-serif;
   font-weight:900;
-  letter-spacing:-0.03em;
-  line-height:1.2;
+  letter-spacing:-0.04em;
+  line-height:1.18;
 }
 h2.sec-title{
-  font-family:"SeoulNamsan","Pretendard",sans-serif;
-  font-weight:700;
-  font-size:clamp(24px,3vw,36px);
-  letter-spacing:-0.03em;
+  font-family:"SeoulNamsan","NanumSquare",sans-serif;
+  font-weight:900;
+  font-size:clamp(25px,3.2vw,38px);
+  letter-spacing:-0.04em;
   margin:0 0 12px;
+  color:var(--ink);
 }
-.sec-label{display:flex;align-items:center;gap:10px;color:var(--bronze);font-size:13px;font-weight:700;margin:0 0 10px;letter-spacing:0.04em}
-.sec-label::before{content:"";width:24px;height:2px;background:var(--bronze)}
-.sec-lead{max-width:65ch;color:var(--ink-60);font-size:15px;margin:0}
+.sec-label{display:flex;align-items:center;gap:10px;color:var(--bronze);font-size:13.5px;font-weight:900;margin:0 0 10px;letter-spacing:0.06em}
+.sec-label::before{content:"";width:26px;height:3px;background:var(--bronze)}
+.sec-lead{max-width:65ch;color:var(--ink-60);font-size:15.5px;margin:0;font-weight:700;line-height:1.6}
 
-/* 헤더 - 현장명 로고 삭제 및 전체 메뉴 풀 와이드 노출 */
+/* 헤더 */
 header{
   position:fixed;inset:0 0 auto;height:var(--head-h);z-index:60;
-  background:rgba(42,15,66,.96);backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(255,255,255,.12);
+  background:rgba(36,11,58,.97);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.14);
 }
 .head-in{
   height:100%;
@@ -114,33 +107,33 @@ nav.gnb ul{
 nav.gnb a{
   display:block;
   padding:8px 14px;
-  color:#E6DAF5;
-  font-size:14.5px;
-  font-weight:500;
+  color:#EFE6F8;
+  font-size:15px;
+  font-weight:700;
   border-radius:4px;
   transition:all 0.2s ease;
 }
 nav.gnb a:hover{
   color:#fff;
-  background:rgba(255,255,255,.14);
+  background:rgba(255,255,255,.16);
 }
 .head-tel{
   flex-shrink:0;
   color:#fff;
-  font-weight:700;
-  font-size:15.5px;
-  border:1px solid rgba(255,255,255,.35);
-  padding:6px 16px;
+  font-weight:900;
+  font-size:16px;
+  border:1.5px solid rgba(255,255,255,.45);
+  padding:6px 18px;
   border-radius:999px;
   white-space:nowrap;
-  background:rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.08);
 }
 @media (max-width:860px){
   .head-tel{display:none}
-  nav.gnb a{padding:8px 10px;font-size:13.5px}
+  nav.gnb a{padding:8px 10px;font-size:14px}
 }
 
-/* 히어로 (메인 조감도) - 블라인드 오버레이 제거하여 이미지 100% 원본 선명도 유지 */
+/* 히어로 (메인 조감도) */
 .hero{position:relative;padding-top:var(--head-h);background:#10051B;color:#fff}
 .hero-img{
   position:relative;
@@ -154,7 +147,6 @@ nav.gnb a:hover{
   object-fit:cover;
   object-position:center;
 }
-/* 투명도 0에 가깝게 설정하여 사진 그대로 선명 노출, 텍스트 가독성을 위해 하단부만 극미세 음영 */
 .hero-img::after{
   content:"";
   position:absolute;
@@ -164,58 +156,58 @@ nav.gnb a:hover{
 }
 .hero-copy{position:absolute;inset:auto 0 0;padding-bottom:32px;z-index:2}
 .hero-copy p{
-  color:#F2E2C4;
-  font-size:14px;
+  color:#F6E8D0;
+  font-size:14.5px;
   margin-bottom:8px;
-  font-weight:500;
-  text-shadow:0 1px 8px rgba(0,0,0,0.8);
+  font-weight:700;
+  text-shadow:0 1px 8px rgba(0,0,0,0.85);
 }
 .hero-copy h1{
   margin:0 0 16px;
-  font-size:clamp(30px,4.8vw,54px);
-  text-shadow:0 2px 14px rgba(0,0,0,0.85);
-  letter-spacing:-0.03em;
+  font-size:clamp(32px,5vw,56px);
+  text-shadow:0 2px 16px rgba(0,0,0,0.9);
+  letter-spacing:-0.04em;
 }
 .hero-cta{display:flex;gap:10px}
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:12px 24px;
+  padding:13px 26px;
   border-radius:4px;
-  font-weight:700;
-  font-size:15px;
+  font-weight:900;
+  font-size:15.5px;
   cursor:pointer;
-  letter-spacing:-0.01em;
-  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+  letter-spacing:-0.02em;
+  box-shadow:0 4px 14px rgba(0,0,0,0.28);
 }
 .btn-gold{background:var(--bronze);color:#fff;border:none}
-.btn-ghost{border:1px solid rgba(255,255,255,.7);color:#fff;background:rgba(0,0,0,0.25)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.8);color:#fff;background:rgba(0,0,0,0.3)}
 
 /* 요약바 */
-.factbar{background:var(--plum-700);border-top:1px solid rgba(255,255,255,.15)}
+.factbar{background:var(--plum-700);border-top:1px solid rgba(255,255,255,.18)}
 .factbar ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
-.factbar li{padding:14px 10px;text-align:center;border-left:1px solid rgba(255,255,255,.1)}
+.factbar li{padding:16px 10px;text-align:center;border-left:1px solid rgba(255,255,255,.12)}
 .factbar li:first-child{border-left:0}
-.factbar dt{font-size:12px;color:#BFA9DC;font-weight:500}
-.factbar dd{margin:0;font-size:19px;font-weight:700;color:#fff;letter-spacing:-0.02em}
+.factbar dt{font-size:12.5px;color:#C9B5E6;font-weight:700;margin-bottom:4px}
+.factbar dd{margin:0;font-size:20px;font-weight:900;color:#fff;letter-spacing:-0.03em}
 @media (max-width:640px){.factbar ul{grid-template-columns:repeat(2,1fr)}}
 
 /* 섹션 공통 */
 section{scroll-margin-top:var(--head-h)}
-.sec{padding:clamp(50px,6vw,85px) 0}
+.sec{padding:clamp(52px,6.5vw,88px) 0}
 .sec--alt{background:var(--white)}
 .sec-head{margin-bottom:28px}
 
 /* 사업개요 사양 표 */
-.spec{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;border-top:1px solid var(--line);margin-bottom:24px}
-.spec div{display:grid;grid-template-columns:120px 1fr;padding:14px 2px;border-bottom:1px solid var(--line)}
-.spec dt{color:var(--plum-600);font-weight:700}
-.spec dd{margin:0;font-weight:500}
+.spec{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;border-top:2px solid var(--plum-700);margin-bottom:24px}
+.spec div{display:grid;grid-template-columns:130px 1fr;padding:15px 4px;border-bottom:1px solid var(--line)}
+.spec dt{color:var(--plum-600);font-weight:900;font-size:15px}
+.spec dd{margin:0;font-weight:700;color:#241C2B;font-size:15px}
 @media (max-width:760px){.spec{grid-template-columns:1fr}}
 
 /* 이미지 쇼케이스 박스 */
-.img-box{margin-top:20px;border:1px solid var(--line);background:#fff;padding:10px;border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,0.04);text-align:center}
+.img-box{margin-top:20px;border:1px solid var(--line);background:#fff;padding:10px;border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,0.05);text-align:center}
 .img-box img{width:100%;margin:0 auto;border-radius:2px}
 
 /* 그리드 이미지 박스 */
@@ -226,37 +218,37 @@ section{scroll-margin-top:var(--head-h)}
 .tab-btns{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
 .tab-btn{
   border:1px solid var(--line);background:#fff;color:var(--ink-60);
-  padding:10px 18px;font-weight:700;border-radius:4px;cursor:pointer;
+  padding:11px 20px;font-weight:900;font-size:15px;border-radius:4px;cursor:pointer;
   transition:all 0.15s ease;
 }
 .tab-btn.active{background:var(--plum-700);color:#fff;border-color:var(--plum-700)}
-.unit-content{display:grid;grid-template-columns:1.2fr 0.8fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);padding:24px;border-radius:4px}
-.unit-desc h3{font-size:26px;color:var(--plum-900);margin:0 0 14px;letter-spacing:-0.03em}
-.unit-desc table{width:100%;border-collapse:collapse;font-size:14.5px}
-.unit-desc th{text-align:left;color:var(--ink-60);padding:8px 0;border-bottom:1px solid var(--line);font-weight:600}
-.unit-desc td{text-align:right;font-weight:700;padding:8px 0;border-bottom:1px solid var(--line)}
+.unit-content{display:grid;grid-template-columns:1.2fr 0.8fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);padding:26px;border-radius:4px}
+.unit-desc h3{font-size:28px;color:var(--plum-900);margin:0 0 16px;letter-spacing:-0.03em;font-weight:900}
+.unit-desc table{width:100%;border-collapse:collapse;font-size:15px}
+.unit-desc th{text-align:left;color:var(--ink-60);padding:10px 0;border-bottom:1px solid var(--line);font-weight:700}
+.unit-desc td{text-align:right;font-weight:900;padding:10px 0;border-bottom:1px solid var(--line);color:#241C2B}
 @media (max-width:800px){.unit-content{grid-template-columns:1fr}}
 
 /* 관심고객등록 폼 */
 #regist{background:linear-gradient(180deg,var(--plum-700),var(--plum-900));color:#fff}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .f-full{grid-column:1/-1}
-label{display:block;font-size:13px;color:#DCC9A8;margin-bottom:5px;font-weight:600}
-.inp{width:100%;padding:12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;border-radius:3px;font-family:inherit}
+label{display:block;font-size:13.5px;color:#DCC9A8;margin-bottom:6px;font-weight:900}
+.inp{width:100%;padding:13px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);color:#fff;border-radius:4px;font-family:inherit;font-weight:700;font-size:15px}
 select.inp option{color:#241C2B}
-.agree{display:flex;gap:10px;background:rgba(0,0,0,.2);padding:14px;border:1px solid rgba(255,255,255,.15);font-size:12.5px;color:#CBBEDB}
+.agree{display:flex;gap:10px;background:rgba(0,0,0,.25);padding:14px;border:1px solid rgba(255,255,255,.2);font-size:13px;color:#DCD1EB;font-weight:700}
 
 /* 푸터 */
-footer{background:#180A26;color:#8E829D;padding:36px 0 100px;font-size:12.5px}
-footer b{color:#fff;font-size:15px;letter-spacing:-0.02em}
+footer{background:#160923;color:#9488A3;padding:40px 0 100px;font-size:13px;font-weight:700}
+footer b{color:#fff;font-size:16px;letter-spacing:-0.03em;font-weight:900}
 
 /* 플로팅 */
 .float-bar{position:fixed;right:20px;bottom:24px;z-index:70;display:flex;flex-direction:column;gap:8px}
-.float-bar a{padding:12px 20px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.float-bar a{padding:13px 22px;border-radius:999px;font-weight:900;font-size:14.5px;box-shadow:0 4px 18px rgba(0,0,0,.35)}
 .f-tel{background:#fff;color:var(--plum-900)}
 .f-reg{background:var(--bronze);color:#fff}
 .m-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;grid-template-columns:1fr 1fr}
-.m-bar a{padding:15px;text-align:center;font-weight:700;font-size:15px}
+.m-bar a{padding:16px;text-align:center;font-weight:900;font-size:15.5px}
 @media (max-width:760px){.float-bar{display:none}.m-bar{display:grid}}
 </style>
 </head>
@@ -264,7 +256,6 @@ footer b{color:#fff;font-size:15px;letter-spacing:-0.02em}
 
 <header>
   <div class="wrap head-in">
-    <!-- 왼쪽 상단 텍스트 로고 삭제 -> 메뉴 전체 여유 공간 확보 -->
     <nav class="gnb">
       <ul>
         <li><a href="#overview">사업개요</a></li>
@@ -284,7 +275,7 @@ footer b{color:#fff;font-size:15px;letter-spacing:-0.02em}
 
 <main id="top">
 
-  <!-- 1. 메인 히어로 조감도 (overview1.jpg) - 투명도 거의 0에 가깝게 선명 노출 -->
+  <!-- 1. 메인 히어로 조감도 (overview1.jpg) -->
   <section class="hero">
     <div class="hero-img">
       <img src="overview1.jpg" alt="이천 중리지구 예미지 메인 조감도" />
@@ -407,7 +398,7 @@ footer b{color:#fff;font-size:15px;letter-spacing:-0.02em}
     </div>
   </section>
 
-  <!-- 8. 세대 평면안내 (unit_59a, unit_59b, unit_84a, unit_84b, unit_84c) -->
+  <!-- 8. 세대 평면안내 -->
   <section id="unit" class="sec sec--alt">
     <div class="wrap">
       <div class="sec-head">
@@ -491,7 +482,7 @@ footer b{color:#fff;font-size:15px;letter-spacing:-0.02em}
           </div>
           <div class="f-full">
             <button type="submit" class="btn btn-gold" style="width:100%;padding:15px;font-size:16px">관심고객 등록 접수하기</button>
-            <div id="resultMsg" style="margin-top:10px;font-weight:700;color:#9FE6C4"></div>
+            <div id="resultMsg" style="margin-top:10px;font-weight:900;color:#9FE6C4"></div>
           </div>
         </div>
       </form>
@@ -504,7 +495,7 @@ footer b{color:#fff;font-size:15px;letter-spacing:-0.02em}
   <div class="wrap">
     <b>이천 중리지구 예미지</b>
     <p>현장위치: 경기도 이천시 중리동 518 (중리지구 B3블록) | 분양문의: 1688-4609 | 시공: 금성백조</p>
-    <p style="font-size:11px;opacity:0.6">※ 본 홈페이지의 CG 및 이미지 사진은 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.</p>
+    <p style="font-size:11px;opacity:0.65">※ 본 홈페이지의 CG 및 이미지 사진은 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.</p>
   </div>
 </footer>
 
@@ -519,7 +510,6 @@ footer b{color:#fff;font-size:15px;letter-spacing:-0.02em}
 </div>
 
 <script>
-// 5개 평면도 이미지 및 데이터 매칭
 const unitData = {
   '84a': { img: 'unit_84a.jpg', title: '84㎡ A 타입 (413세대)', spec1: '84.9750㎡', spec2: '113.1230㎡', spec3: '4Bay 맞통풍 판상형 구조, 대형 팬트리 및 드레스룸' },
   '84b': { img: 'unit_84b.jpg', title: '84㎡ B 타입 (238세대)', spec1: '84.9810㎡', spec2: '113.2140㎡', spec3: '채광과 조망이 우수한 이면 개방형 특화 평면' },
