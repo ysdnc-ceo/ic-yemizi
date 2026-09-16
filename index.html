@@ -597,6 +597,67 @@ function handleForm(e) {
   });
 }
 </script>
+<script>
+// 5개 평면도 이미지 및 데이터 매칭
+const unitData = {
+  '84a': { img: 'unit_84a.jpg', title: '84㎡ A 타입 (413세대)', spec1: '84.9750㎡', spec2: '113.1230㎡', spec3: '4Bay 맞통풍 판상형 구조, 대형 팬트리 및 드레스룸' },
+  '84b': { img: 'unit_84b.jpg', title: '84㎡ B 타입 (238세대)', spec1: '84.9810㎡', spec2: '113.2140㎡', spec3: '채광과 조망이 우수한 이면 개방형 특화 평면' },
+  '84c': { img: 'unit_84c.jpg', title: '84㎡ C 타입 (122세대)', spec1: '84.9620㎡', spec2: '112.9800㎡', spec3: '공간 효율을 극대화한 실속형 맞통풍 평면' },
+  '59a': { img: 'unit_59a.jpg', title: '59㎡ A 타입 (140세대)', spec1: '59.9540㎡', spec2: '80.1250㎡', spec3: '선호도 높은 4Bay 소형 혁신 평면' },
+  '59b': { img: 'unit_59b.jpg', title: '59㎡ B 타입 (96세대)', spec1: '59.9620㎡', spec2: '80.2100㎡', spec3: '넓은 거실과 독립적인 침실 배치의 타워형 설계' }
+};
 
+function showUnit(type, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  const d = unitData[type];
+  document.getElementById('unitImg').src = d.img;
+  document.getElementById('unitTitle').textContent = d.title;
+  document.getElementById('spec1').textContent = d.spec1;
+  document.getElementById('spec2').textContent = d.spec2;
+  document.getElementById('spec3').textContent = d.spec3;
+}
+
+// 구글 설문지 실시간 연동 함수
+function handleForm(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const resultMsg = document.getElementById('resultMsg');
+
+  const FORM_URL = "https://docs.google.com/forms/u/0/d/1ebBmoYTBM2zUi3tqSexncGdwUYP8pCGJ9hvpYwfcYDg/formResponse";
+
+  const formData = new FormData();
+  formData.append("entry.1997705992", name);    // 성함
+  formData.append("entry.931521641", phone);     // 연락처
+  
+  // 날짜 및 시간 자동 전송
+  const now = new Date();
+  formData.append("entry.1590018652_year", now.getFullYear());
+  formData.append("entry.1590018652_month", now.getMonth() + 1);
+  formData.append("entry.1590018652_day", now.getDate());
+  formData.append("entry.293065421_hour", String(now.getHours()).padStart(2, '0'));
+  formData.append("entry.293065421_minute", String(now.getMinutes()).padStart(2, '0'));
+
+  resultMsg.style.color = "#E5D9F2";
+  resultMsg.textContent = "접수 처리 중입니다...";
+
+  fetch(FORM_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: formData
+  }).then(() => {
+    resultMsg.style.color = "#9FE6C4";
+    resultMsg.textContent = "관심고객 등록이 정상 완료되었습니다. 담당자가 신속히 안내드리겠습니다.";
+    e.target.reset();
+  }).catch((err) => {
+    resultMsg.style.color = "#FFB3C7";
+    resultMsg.textContent = "접수 중 오류가 발생했습니다. 대표번호(1688-4609)로 문의 바랍니다.";
+  });
+}
+</script>
+  
 </body>
 </html>
