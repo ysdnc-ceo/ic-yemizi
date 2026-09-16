@@ -467,15 +467,19 @@ footer b{color:#fff;font-size:16px;letter-spacing:-0.03em;font-weight:900}
         <p class="sec-lead" style="color:#D9CCE9">등록해주시면 분양 일정, 잔여세대 안내, 방문 예약 정보를 우선 전달해 드립니다.</p>
       </div>
 
-      <form id="consultForm" onsubmit="handleForm(event)">
+      <!-- 보이지 않는 숨김 프레임 -->
+      <iframe name="gform_iframe" id="gform_iframe" style="display:none;" onload="if(window.submitted){onGFormSuccess();}"></iframe>
+
+      <!-- 구글 폼 전송 엔드포인트 직결 폼 -->
+      <form action="https://docs.google.com/forms/u/0/d/1ebBmoYTBM2zUi3tqSexncGdwUYP8pCGJ9hvpYwfcYDg/formResponse" method="POST" target="gform_iframe" onsubmit="window.submitted=true;">
         <div class="form-grid">
           <div>
             <label for="name">성함 *</label>
-            <input class="inp" type="text" id="name" required placeholder="성함을 입력하세요" />
+            <input class="inp" type="text" id="name" name="entry.1997705992" required placeholder="성함을 입력하세요" />
           </div>
           <div>
             <label for="phone">연락처 *</label>
-            <input class="inp" type="tel" id="phone" required placeholder="010-1234-5678" />
+            <input class="inp" type="tel" id="phone" name="entry.931521641" required placeholder="010-1234-5678" />
           </div>
           <div class="f-full">
             <label for="type">관심 타입</label>
@@ -486,6 +490,19 @@ footer b{color:#fff;font-size:16px;letter-spacing:-0.03em;font-weight:900}
               <option value="59A">59㎡ A 타입</option>
               <option value="59B">59㎡ B 타입</option>
             </select>
+          </div>
+          <div class="f-full agree">
+            <input type="checkbox" id="chk" required checked />
+            <label for="chk" style="color:inherit;margin:0">개인정보 수집 및 분양 상담 연락에 동의합니다.</label>
+          </div>
+          <div class="f-full">
+            <button type="submit" class="btn btn-gold" style="width:100%;padding:15px;font-size:16px">관심고객 등록 접수하기</button>
+            <div id="resultMsg" style="margin-top:10px;font-weight:900;color:#9FE6C4"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
           </div>
 
           <!-- 정식 법정 개인정보 수집 및 이용 안내 동의 -->
