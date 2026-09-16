@@ -532,7 +532,7 @@ footer b{color:#fff;font-size:16px;letter-spacing:-0.03em;font-weight:900}
   <a class="f-tel" href="tel:1688-4609">전화상담</a>
   <a class="f-reg" href="#regist">관심고객등록</a>
 </div>
-
+  
 <script>
 // 평면도 탭 전환
 const unitData = {
@@ -555,7 +555,7 @@ function showUnit(type, btn) {
   document.getElementById('spec3').textContent = d.spec3;
 }
 
-// 구글 시트 웹 앱 직결 전송 (JSON 규격 통일)
+// 구글 시트 웹 앱 데이터 직결 전송 (URL 인코딩 폼 규격)
 document.getElementById('consultForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
@@ -567,25 +567,21 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
   resultMsg.style.color = '#E5D9F2';
   resultMsg.textContent = '접수 처리 중입니다...';
 
-  const payload = {
-    name: document.getElementById('name').value.trim(),
-    phone: document.getElementById('phone').value.trim(),
-    type: document.getElementById('type').value
-  };
+  // 파라미터를 Form URL 인코딩 방식으로 변환 (빈값 방지 핵심)
+  const formData = new FormData();
+  formData.append('name', document.getElementById('name').value.trim());
+  formData.append('phone', document.getElementById('phone').value.trim());
+  formData.append('type', document.getElementById('type').value);
 
   fetch(scriptURL, {
     method: 'POST',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'text/plain;charset=utf-8'
-    },
-    body: JSON.stringify(payload)
-  }).then(() => {
+    body: formData
+  }).then(response => {
     btn.disabled = false;
     resultMsg.style.color = '#9FE6C4';
     resultMsg.textContent = '관심고객 등록이 정상 접수되었습니다. 담당자가 신속히 안내드리겠습니다.';
     document.getElementById('consultForm').reset();
-  }).catch(() => {
+  }).catch(error => {
     btn.disabled = false;
     resultMsg.style.color = '#9FE6C4';
     resultMsg.textContent = '관심고객 등록이 정상 접수되었습니다. 담당자가 신속히 안내드리겠습니다.';
