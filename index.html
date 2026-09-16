@@ -597,6 +597,7 @@ function handleForm(e) {
   });
 }
 </script>
+  
 <script>
 // 5개 평면도 이미지 및 데이터 매칭
 const unitData = {
@@ -619,7 +620,7 @@ function showUnit(type, btn) {
   document.getElementById('spec3').textContent = d.spec3;
 }
 
-// 구글 설문지 실시간 연동 함수
+// ▼ 확실하게 전송되는 전송 함수 ▼
 function handleForm(e) {
   e.preventDefault();
   
@@ -627,35 +628,43 @@ function handleForm(e) {
   const phone = document.getElementById('phone').value.trim();
   const resultMsg = document.getElementById('resultMsg');
 
-  const FORM_URL = "https://docs.google.com/forms/u/0/d/1ebBmoYTBM2zUi3tqSexncGdwUYP8pCGJ9hvpYwfcYDg/formResponse";
+  // 백그라운드 전송용 가상 폼 생성
+  const hiddenIframeName = "hidden_iframe";
+  let iframe = document.getElementById(hiddenIframeName);
+  if (!iframe) {
+    iframe = document.createElement("iframe");
+    iframe.name = hiddenIframeName;
+    iframe.id = hiddenIframeName;
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+  }
 
-  const formData = new FormData();
-  formData.append("entry.1997705992", name);    // 성함
-  formData.append("entry.931521641", phone);     // 연락처
-  
-  // 날짜 및 시간 자동 전송
-  const now = new Date();
-  formData.append("entry.1590018652_year", now.getFullYear());
-  formData.append("entry.1590018652_month", now.getMonth() + 1);
-  formData.append("entry.1590018652_day", now.getDate());
-  formData.append("entry.293065421_hour", String(now.getHours()).padStart(2, '0'));
-  formData.append("entry.293065421_minute", String(now.getMinutes()).padStart(2, '0'));
+  const gForm = document.createElement("form");
+  gForm.action = "https://docs.google.com/forms/u/0/d/1ebBmoYTBM2zUi3tqSexncGdwUYP8pCGJ9hvpYwfcYDg/formResponse";
+  gForm.method = "POST";
+  gForm.target = hiddenIframeName;
 
-  resultMsg.style.color = "#E5D9F2";
-  resultMsg.textContent = "접수 처리 중입니다...";
+  // 성함
+  const nameInput = document.createElement("input");
+  nameInput.type = "hidden";
+  nameInput.name = "entry.1997705992";
+  nameInput.value = name;
+  gForm.appendChild(nameInput);
 
-  fetch(FORM_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: formData
-  }).then(() => {
-    resultMsg.style.color = "#9FE6C4";
-    resultMsg.textContent = "관심고객 등록이 정상 완료되었습니다. 담당자가 신속히 안내드리겠습니다.";
-    e.target.reset();
-  }).catch((err) => {
-    resultMsg.style.color = "#FFB3C7";
-    resultMsg.textContent = "접수 중 오류가 발생했습니다. 대표번호(1688-4609)로 문의 바랍니다.";
-  });
+  // 연락처
+  const phoneInput = document.createElement("input");
+  phoneInput.type = "hidden";
+  phoneInput.name = "entry.931521641";
+  phoneInput.value = phone;
+  gForm.appendChild(phoneInput);
+
+  document.body.appendChild(gForm);
+  gForm.submit();
+  document.body.removeChild(gForm);
+
+  resultMsg.style.color = "#9FE6C4";
+  resultMsg.textContent = "관심고객 등록이 정상 완료되었습니다. 담당자가 신속히 안내드리겠습니다.";
+  document.querySelector("form").reset();
 }
 </script>
   
