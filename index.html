@@ -556,7 +556,7 @@ function showUnit(type, btn) {
   document.getElementById('spec3').textContent = d.spec3;
 }
 
-// 구글 스프레드시트 100% 정상 전송 함수
+// 최신 구글 폼 100% 정상 전송 함수
 function handleForm(e) {
   e.preventDefault();
   
@@ -565,7 +565,7 @@ function handleForm(e) {
   const resultMsg = document.getElementById('resultMsg');
   const btn = document.getElementById('submitBtn');
 
-  // 백그라운드 숨김 iframe 생성
+  // 백그라운드 숨김 iframe 생성 (화면 깜빡임/이동 방지)
   const iframeName = "hidden_gform_frame";
   let iframe = document.getElementById(iframeName);
   if (!iframe) {
@@ -576,9 +576,9 @@ function handleForm(e) {
     document.body.appendChild(iframe);
   }
 
-  // 구글 폼 전송용 폼 가상 생성
+  // 최신 구글 폼 주소로 전송
   const gForm = document.createElement("form");
-  gForm.action = "https://docs.google.com/forms/u/0/d/1ebBmoYTBM2zUi3tqSexncGdwUYP8pCGJ9hvpYwfcYDg/formResponse";
+  gForm.action = "https://docs.google.com/forms/d/e/1FAIpQLSddpxQPyyBa3Mx0jwWgEUxWg4SWJdhX0Q84Fa7S1v-Qx1srxw/formResponse";
   gForm.method = "POST";
   gForm.target = iframeName;
 
@@ -590,20 +590,12 @@ function handleForm(e) {
     gForm.appendChild(input);
   }
 
-  // 1. 성함 및 연락처
-  addField("entry.1997705992", name);
-  addField("entry.931521641", phone);
-
-  // 2. 구글 폼에 설정된 필수 날짜/시간 파라미터 자동 생성 전송
-  const now = new Date();
-  addField("entry.1590018652_year", now.getFullYear());
-  addField("entry.1590018652_month", now.getMonth() + 1);
-  addField("entry.1590018652_day", now.getDate());
-  addField("entry.293065421_hour", String(now.getHours()).padStart(2, '0'));
-  addField("entry.293065421_minute", String(now.getMinutes()).padStart(2, '0'));
+  // 최신 entry 번호 적용
+  addField("entry.1691232822", name);   // 성함
+  addField("entry.239339343", phone);   // 연락처
 
   document.body.appendChild(gForm);
-  btn.disabled = true;
+  if (btn) btn.disabled = true;
   resultMsg.style.color = "#E5D9F2";
   resultMsg.textContent = "접수 처리 중입니다...";
 
@@ -611,11 +603,12 @@ function handleForm(e) {
 
   setTimeout(() => {
     document.body.removeChild(gForm);
-    btn.disabled = false;
+    if (btn) btn.disabled = false;
     resultMsg.style.color = "#9FE6C4";
     resultMsg.textContent = "관심고객 등록이 정상 완료되었습니다. 담당자가 신속히 안내드리겠습니다.";
-    document.getElementById('consultForm').reset();
-  }, 700);
+    const formElement = document.getElementById('consultForm') || document.querySelector('#regist form');
+    if (formElement) formElement.reset();
+  }, 600);
 }
 </script>
 </body>
