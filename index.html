@@ -457,7 +457,7 @@ footer b{color:#fff;font-size:16px;letter-spacing:-0.03em;font-weight:900}
       </div>
     </div>
   </section>
-  <!-- 10. 관심고객등록 폼 (순수 HTML 직결 방식) -->
+  <!-- 10. 관심고객등록 폼 -->
   <section id="regist" class="sec">
     <div class="wrap">
       <div class="sec-head">
@@ -466,10 +466,10 @@ footer b{color:#fff;font-size:16px;letter-spacing:-0.03em;font-weight:900}
         <p class="sec-lead" style="color:#D9CCE9">등록해주시면 분양 일정, 잔여세대 안내, 방문 예약 정보를 우선 전달해 드립니다.</p>
       </div>
 
-      <!-- 페이지 새로고침 없이 전송하기 위한 숨김 프레임 -->
+      <!-- 백그라운드 전송용 숨김 iframe -->
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){onFormSubmit();}"></iframe>
 
-      <form action="https://docs.google.com/forms/d/e/1FAIpQLSddpxQPyyBa3Mx0jwWgEUxWg4SWJdhX0Q84Fa7S1v-Qx1srxw/formResponse" 
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLScbCrlnIHm0UIGebO2Io8U8PNw9FnGUv6bgygqvFNOtHmhYRA/formResponse" 
             method="POST" 
             target="hidden_iframe" 
             onsubmit="submitted=true;">
@@ -501,7 +501,7 @@ footer b{color:#fff;font-size:16px;letter-spacing:-0.03em;font-weight:900}
                 [필수] 개인정보 수집 및 이용에 동의합니다.
               </label>
             </div>
-            <div style="background:rgba(0,0,0,0.35); padding:10px 12px; border-radius:4px; font-size:12px; line-height:1.6; color:#CBBEDB; width:100%; max-height:85px; overflow-y:auto;">
+            <div style="background:rgba(0,0,0,0.35); padding:10px 12px; border-radius:4px; font-size:12px; line-height:1.6; color:#CBBEDB; width:100%; max-height:85px; overflow-y:auto; border:1px solid rgba(255,255,255,0.15);">
               <b>[개인정보 수집 및 이용 안내]</b><br />
               1. 수집 항목: 성명, 휴대전화번호<br />
               2. 수집 및 이용 목적: 이천 중리지구 예미지 분양 상담, 홍보관 방문 예약, 청약/계약 일정 안내<br />
@@ -561,7 +561,7 @@ function showUnit(type, btn) {
   document.getElementById('spec3').textContent = d.spec3;
 }
 
-// 폼 전송 완료 처리
+// 폼 전송 완료 처리 함수
 var submitted = false;
 function onFormSubmit() {
   var resultMsg = document.getElementById('resultMsg');
@@ -573,4 +573,3 @@ function onFormSubmit() {
 </script>
 </body>
 </html>
-  
