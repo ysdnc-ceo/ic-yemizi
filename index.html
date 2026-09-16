@@ -555,7 +555,7 @@ function showUnit(type, btn) {
   document.getElementById('spec3').textContent = d.spec3;
 }
 
-// 구글 시트 웹 앱 직결 전송 (이천 중리 예미지 전용)
+// 구글 시트 웹 앱 직결 전송 (JSON 규격 통일)
 document.getElementById('consultForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
@@ -567,21 +567,30 @@ document.getElementById('consultForm').addEventListener('submit', function(e) {
   resultMsg.style.color = '#E5D9F2';
   resultMsg.textContent = '접수 처리 중입니다...';
 
-  const formData = new FormData(this);
+  const payload = {
+    name: document.getElementById('name').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    type: document.getElementById('type').value
+  };
 
-  fetch(scriptURL, { method: 'POST', body: formData })
-    .then(response => {
-      btn.disabled = false;
-      resultMsg.style.color = '#9FE6C4';
-      resultMsg.textContent = '관심고객 등록이 정상 접수되었습니다. 담당자가 신속히 안내드리겠습니다.';
-      document.getElementById('consultForm').reset();
-    })
-    .catch(error => {
-      btn.disabled = false;
-      resultMsg.style.color = '#9FE6C4';
-      resultMsg.textContent = '관심고객 등록이 정상 접수되었습니다. 담당자가 신속히 안내드리겠습니다.';
-      document.getElementById('consultForm').reset();
-    });
+  fetch(scriptURL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'text/plain;charset=utf-8'
+    },
+    body: JSON.stringify(payload)
+  }).then(() => {
+    btn.disabled = false;
+    resultMsg.style.color = '#9FE6C4';
+    resultMsg.textContent = '관심고객 등록이 정상 접수되었습니다. 담당자가 신속히 안내드리겠습니다.';
+    document.getElementById('consultForm').reset();
+  }).catch(() => {
+    btn.disabled = false;
+    resultMsg.style.color = '#9FE6C4';
+    resultMsg.textContent = '관심고객 등록이 정상 접수되었습니다. 담당자가 신속히 안내드리겠습니다.';
+    document.getElementById('consultForm').reset();
+  });
 });
 </script>
 </body>
