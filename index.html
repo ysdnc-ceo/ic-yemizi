@@ -637,51 +637,14 @@ function showUnit(type, btn) {
   document.getElementById('spec3').textContent = d.spec3;
 }
 
-// ▼ 확실하게 전송되는 전송 함수 ▼
-function handleForm(e) {
-  e.preventDefault();
-  
-  const name = document.getElementById('name').value.trim();
-  const phone = document.getElementById('phone').value.trim();
+// 구글 폼 다이렉트 전송 성공 처리
+window.submitted = false;
+function onGFormSuccess() {
   const resultMsg = document.getElementById('resultMsg');
-
-  // 백그라운드 전송용 가상 폼 생성
-  const hiddenIframeName = "hidden_iframe";
-  let iframe = document.getElementById(hiddenIframeName);
-  if (!iframe) {
-    iframe = document.createElement("iframe");
-    iframe.name = hiddenIframeName;
-    iframe.id = hiddenIframeName;
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);
-  }
-
-  const gForm = document.createElement("form");
-  gForm.action = "https://docs.google.com/forms/u/0/d/1ebBmoYTBM2zUi3tqSexncGdwUYP8pCGJ9hvpYwfcYDg/formResponse";
-  gForm.method = "POST";
-  gForm.target = hiddenIframeName;
-
-  // 성함
-  const nameInput = document.createElement("input");
-  nameInput.type = "hidden";
-  nameInput.name = "entry.1997705992";
-  nameInput.value = name;
-  gForm.appendChild(nameInput);
-
-  // 연락처
-  const phoneInput = document.createElement("input");
-  phoneInput.type = "hidden";
-  phoneInput.name = "entry.931521641";
-  phoneInput.value = phone;
-  gForm.appendChild(phoneInput);
-
-  document.body.appendChild(gForm);
-  gForm.submit();
-  document.body.removeChild(gForm);
-
   resultMsg.style.color = "#9FE6C4";
   resultMsg.textContent = "관심고객 등록이 정상 완료되었습니다. 담당자가 신속히 안내드리겠습니다.";
-  document.querySelector("form").reset();
+  document.querySelector('#regist form').reset();
+  window.submitted = false;
 }
 </script>
   
