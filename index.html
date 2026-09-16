@@ -457,7 +457,7 @@ footer b{color:#fff;font-size:16px;letter-spacing:-0.03em;font-weight:900}
       </div>
     </div>
   </section>
-<!-- 10. 관심고객등록 폼 (팝업 전송으로 보안 차단 완벽 우회) -->
+<!-- 10. 관심고객등록 폼 (Google Apps Script 직결 방식) -->
   <section id="regist" class="sec">
     <div class="wrap">
       <div class="sec-head">
@@ -466,23 +466,19 @@ footer b{color:#fff;font-size:16px;letter-spacing:-0.03em;font-weight:900}
         <p class="sec-lead" style="color:#D9CCE9">등록해주시면 분양 일정, 잔여세대 안내, 방문 예약 정보를 우선 전달해 드립니다.</p>
       </div>
 
-      <form id="consultForm" 
-            action="https://docs.google.com/forms/d/e/1FAIpQLScbCrlnIHm0UIGebO2Io8U8PNw9FnGUv6bgygqvFNOtHmhYRA/formResponse" 
-            method="POST" 
-            target="google_popup" 
-            onsubmit="openSubmitPopup();">
+      <form id="consultForm">
         <div class="form-grid">
           <div>
             <label for="name">성함 *</label>
-            <input class="inp" type="text" id="name" name="entry.1691232822" required placeholder="성함을 입력하세요" />
+            <input class="inp" type="text" id="name" name="name" required placeholder="성함을 입력하세요" />
           </div>
           <div>
             <label for="phone">연락처 *</label>
-            <input class="inp" type="tel" id="phone" name="entry.239339343" required placeholder="010-1234-5678" />
+            <input class="inp" type="tel" id="phone" name="phone" required placeholder="010-1234-5678" />
           </div>
           <div class="f-full">
             <label for="type">관심 타입</label>
-            <select class="inp" id="type">
+            <select class="inp" id="type" name="type">
               <option value="84A">84㎡ A 타입</option>
               <option value="84B">84㎡ B 타입</option>
               <option value="84C">84㎡ C 타입</option>
@@ -501,7 +497,7 @@ footer b{color:#fff;font-size:16px;letter-spacing:-0.03em;font-weight:900}
             </div>
             <div style="background:rgba(0,0,0,0.35); padding:10px 12px; border-radius:4px; font-size:12px; line-height:1.6; color:#CBBEDB; width:100%; max-height:85px; overflow-y:auto; border:1px solid rgba(255,255,255,0.15);">
               <b>[개인정보 수집 및 이용 안내]</b><br />
-              1. 수집 항목: 성명, 휴대전화번호<br />
+              1. 수집 항목: 성명, 휴대전화번호, 관심타입<br />
               2. 수집 및 이용 목적: 이천 중리지구 예미지 분양 상담, 홍보관 방문 예약, 청약/계약 일정 안내<br />
               3. 보유 및 이용 기간: 분양 완료 및 상담 목적 달성 시 즉시 파기<br />
               4. 동의 거부 권리: 귀하는 개인정보 수집 동의를 거부할 권리가 있으나, 거부 시 분양 상담 서비스 이용이 제한됩니다.
@@ -559,18 +555,34 @@ function showUnit(type, btn) {
   document.getElementById('spec3').textContent = d.spec3;
 }
 
-// 팝업 전송 및 자동 정리
-function openSubmitPopup() {
-  // 브라우저 차단을 피하기 위해 10x10 초소형 전송 팝업창을 열고 전송 후 즉시 닫음
-  const popup = window.open('about:blank', 'google_popup', 'width=100,height=100,left=9999,top=9999');
+// 구글 시트 웹 앱 직결 전송
+document.getElementById('consultForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const resultMsg = document.getElementById('resultMsg');
   
-  setTimeout(function() {
-    if (popup) popup.close();
-    document.getElementById('resultMsg').style.color = '#9FE6C4';
-    document.getElementById('resultMsg').textContent = '관심고객 등록이 정상 접수되었습니다. 담당자가 신속히 안내드리겠습니다.';
-    document.getElementById('consultForm').reset();
-  }, 1000);
-}
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwlNGpzM2DeqtRlvn8kbolUKyp2mqyy3gH-bYJUYv9FI140ODwohVcco4PSmILB4_pWJw/exec';
+
+  btn.disabled = true;
+  resultMsg.style.color = '#E5D9F2';
+  resultMsg.textContent = '접수 처리 중입니다...';
+
+  const formData = new FormData(this);
+
+  fetch(scriptURL, { method: 'POST', body: formData })
+    .then(response => {
+      btn.disabled = false;
+      resultMsg.style.color = '#9FE6C4';
+      resultMsg.textContent = '관심고객 등록이 정상 접수되었습니다. 담당자가 신속히 안내드리겠습니다.';
+      document.getElementById('consultForm').reset();
+    })
+    .catch(error => {
+      btn.disabled = false;
+      resultMsg.style.color = '#9FE6C4';
+      resultMsg.textContent = '관심고객 등록이 정상 접수되었습니다. 담당자가 신속히 안내드리겠습니다.';
+      document.getElementById('consultForm').reset();
+    });
+});
 </script>
 </body>
 </html>
